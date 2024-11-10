@@ -12,16 +12,26 @@ function App() {
   const [doneTasks, setDoneTasks] = useState([]);
 
   return (
-    <>
-     <div className="header">
+    <div className="p-10 flex justify-center flex-col ">
+      <div className=" my-4 flex justify-center text-4xl ">
         <h1>BOULDERBINGO</h1>
       </div>
-      <nav>
-        <Link to="/main">Main</Link>
-        <Link to="/savedtasks">Saved Tasks</Link>
-        <Link to="/donetasks">Done Tasks</Link>
-        <Link to="/variables">Variables</Link>
-        <Link to="/contact">Contact</Link>
+      <nav className="my-4 flex justify-between gap-2 ">
+        <Link to="/main" className="grow btnnav btn-blue btn-blue:hover">
+          Main
+        </Link>
+        <Link to="/savedtasks" className="btnnav btn-blue btn-blue:hover">
+          Saved Tasks
+        </Link>
+        <Link to="/donetasks" className="btnnav btn-blue btn-blue:hover">
+          Done Tasks
+        </Link>
+        <Link to="/variables" className="btnnav btn-blue btn-blue:hover">
+          Variables
+        </Link>
+        <Link to="/contact" className="btnnav btn-blue btn-blue:hover">
+          Contact
+        </Link>
       </nav>
       <Routes>
         <Route
@@ -33,7 +43,12 @@ function App() {
         <Route
           path="/savedtasks"
           element={
-            <SavedTasks savedTasks={savedTasks} setSavedTasks={setSavedTasks} doneTasks={doneTasks} setDoneTasks={setDoneTasks}/>
+            <SavedTasks
+              savedTasks={savedTasks}
+              setSavedTasks={setSavedTasks}
+              doneTasks={doneTasks}
+              setDoneTasks={setDoneTasks}
+            />
           }
         />
         <Route
@@ -45,7 +60,7 @@ function App() {
         <Route path="/variables" element={<AllVariables />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

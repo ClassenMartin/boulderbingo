@@ -140,10 +140,10 @@ function Main({ savedTasks, setSavedTasks }) {
   };
 
   return (
-    <div className="App">
-      <h2>Create tasks here</h2>
-      <div>
-        <button onClick={createTask}>
+    <div className="h-screen">
+      <h2 className="header my-4">Create tasks here</h2>
+      <div className="my-4 flex justify-around  gap-2">
+        <button onClick={createTask} className="btn btn-light btn-light:hover">
           {preselect.colorType !== null ||
           preselect.terrainType !== null ||
           preselect.moveType !== null ||
@@ -152,7 +152,7 @@ function Main({ savedTasks, setSavedTasks }) {
             : "RANDOM TASK"}
         </button>
 
-        <button onClick={selectorToggle}>
+        <button onClick={selectorToggle} className="btn btn-light btn-light:hover">
           {!selector ? "OPEN PRESELECTOR" : "CLOSE PRESELECTOR"}
         </button>
       </div>
@@ -192,7 +192,7 @@ function Main({ savedTasks, setSavedTasks }) {
                 STYLE:<b>{task.styleType.name}</b>
               </p>
               <div>
-                <button onClick={saveTask} disabled={!task}>
+                <button onClick={saveTask} disabled={!task} className="btn btn-light btn-light:hover">
                   SAVE TASK
                 </button>
               </div>
@@ -210,6 +210,7 @@ function Main({ savedTasks, setSavedTasks }) {
               <button
                 onClick={clearColorSelect}
                 disabled={!preselect.colorType}
+                className="btn btn-light btn-light:hover"
               >
                 CLEAR THIS OPTION
               </button>
@@ -217,7 +218,7 @@ function Main({ savedTasks, setSavedTasks }) {
               {COLORS.map((color, index) => (
                 <div key={index}>
                   <h4>{color.name}</h4>
-                  <button onClick={() => setColorPreselect(color)}>
+                  <button onClick={() => setColorPreselect(color)} className="btn btn-light btn-light:hover">
                     Choose
                   </button>
                 </div>
@@ -232,7 +233,7 @@ function Main({ savedTasks, setSavedTasks }) {
               {MOVES.map((move, index) => (
                 <div key={index}>
                   <h4>{move.name}</h4>
-                  <button onClick={() => setMovePreselect(move)}>Choose</button>
+                  <button onClick={() => setMovePreselect(move)} className="btn btn-light btn-light:hover">Choose</button>
                 </div>
               ))}
             </div>
@@ -248,7 +249,7 @@ function Main({ savedTasks, setSavedTasks }) {
               {TERRAINS.map((terrain, index) => (
                 <div key={index}>
                   <h4>{terrain.name}</h4>
-                  <button onClick={() => setTerrainPreselect(terrain)}>
+                  <button onClick={() => setTerrainPreselect(terrain)} className="btn btn-light btn-light:hover">
                     Choose
                   </button>
                 </div>
@@ -263,7 +264,7 @@ function Main({ savedTasks, setSavedTasks }) {
               {HOLDS.map((hold, index) => (
                 <div key={index}>
                   <h4>{hold.name}</h4>
-                  <button onClick={() => setHoldPreselect(hold)}>Choose</button>
+                  <button onClick={() => setHoldPreselect(hold)} className="btn btn-light btn-light:hover">Choose</button>
                 </div>
               ))}
             </div>
@@ -280,7 +281,7 @@ function Main({ savedTasks, setSavedTasks }) {
               {FEELINGS.map((feeling, index) => (
                 <div key={index}>
                   <h4>{feeling.name}</h4>
-                  <button onClick={() => setFeelingPreselect(feeling)}>
+                  <button onClick={() => setFeelingPreselect(feeling)} className="btn btn-light btn-light:hover">
                     Choose
                   </button>
                 </div>
@@ -299,7 +300,7 @@ function Main({ savedTasks, setSavedTasks }) {
               {STARTS.map((start, index) => (
                 <div key={index}>
                   <h4>{start.name}</h4>
-                  <button onClick={() => setStartPreselect(start)}>
+                  <button onClick={() => setStartPreselect(start)} className="btn btn-light btn-light:hover">
                     Choose
                   </button>
                 </div>
@@ -318,7 +319,7 @@ function Main({ savedTasks, setSavedTasks }) {
               {TOPICS.map((topic, index) => (
                 <div key={index}>
                   <h4>{topic.name}</h4>
-                  <button onClick={() => setTopicPreselect(topic)}>
+                  <button onClick={() => setTopicPreselect(topic)} className="btn btn-light btn-light:hover">
                     Choose
                   </button>
                 </div>
@@ -337,7 +338,7 @@ function Main({ savedTasks, setSavedTasks }) {
               {STYLES.map((style, index) => (
                 <div key={index}>
                   <h4>{style.name}</h4>
-                  <button onClick={() => setStylePreselect(style)}>
+                  <button onClick={() => setStylePreselect(style)} className="btn btn-light btn-light:hover">
                     Choose
                   </button>
                 </div>

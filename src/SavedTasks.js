@@ -62,7 +62,7 @@ function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
         {savedTasks.length > 0 && (
           <div>
             <div>
-              <button onClick={clearSavedTasks}>CLEAR SAVED TASKS</button>
+              <button onClick={clearSavedTasks} className="btn btn-light btn-light:hover">CLEAR SAVED TASKS</button>
             </div>
             {savedTasks.map((savedTask, index) => (
               <div
@@ -87,12 +87,12 @@ function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
                     value={title[index] || ""}
                     onChange={(e) => handleTitleChange(index, e.target.value)}
                   />
-                  <button type="submit">NAME THIS TASK</button>
+                  <button type="submit" className="btn btn-light btn-light:hover">NAME THIS TASK</button>
                 </form>
-                <button onClick={() => deleteSavedTask(index)}>
+                <button onClick={() => deleteSavedTask(index)} className="btn btn-light btn-light:hover">
                   DELETE THIS TASK
                 </button>
-                <button onClick={() => markAsDone(index)}>MARK AS DONE</button>
+                <button onClick={() => markAsDone(index)} className="btn btn-light btn-light:hover">MARK AS DONE</button>
                 {savedTask.title ? <p>title: {savedTask.title}</p> : ""}
                 <p>{savedTask.colorType.name}</p>
                 <p>{savedTask.moveType.name}</p>
@@ -117,7 +117,7 @@ function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
                     value={note[index] || ""}
                     onChange={(e) => handleNoteChange(index, e.target.value)}
                   />
-                  <button type="submit">ADD NOTE TO TASK</button>
+                  <button type="submit" className="btn btn-light btn-light:hover">ADD NOTE TO TASK</button>
                 </form>
               </div>
             ))}
