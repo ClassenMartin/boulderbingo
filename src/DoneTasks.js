@@ -17,6 +17,8 @@ function DoneTasks({ doneTasks, setDoneTasks }) {
                   border: "solid black",
                 }}
               >
+                
+                {doneTask.title ? <p>title: {doneTask.title}</p> : ""}
                 <p>{doneTask.colorType.name}</p>
                 <p>{doneTask.moveType.name}</p>
                 <p>{doneTask.terrainType.name}</p>
@@ -25,7 +27,7 @@ function DoneTasks({ doneTasks, setDoneTasks }) {
                 <p>{doneTask.startType.name}</p>
                 <p>{doneTask.topicType.name}</p>
                 <p>{doneTask.styleType.name}</p>
-                {doneTask.note ? <p>note: {doneTask.note}</p> : "" }
+                {doneTask.note ? <p>note: {doneTask.note}</p> : ""}
               </div>
             ))}
           </div>
