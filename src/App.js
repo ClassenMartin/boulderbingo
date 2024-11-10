@@ -14,7 +14,7 @@ function App() {
   return (
     <>
      <div className="header">
-        <h1>boulderbingo</h1>
+        <h1>BOULDERBINGO</h1>
       </div>
       <nav>
         <Link to="/main">Main</Link>
