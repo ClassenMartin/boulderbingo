@@ -133,7 +133,168 @@
 
 // export default SavedTasks;
 
-import React, { useState } from "react";
+// import React, { useEffect, useState } from "react";
+
+// import NoteModal from "./NoteModal";
+// import TitleModal from "./TitleModal";
+
+// function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
+//   const [note, setNote] = useState({});
+//   const [title, setTitle] = useState({});
+//   const [currentIndex, setCurrentIndex] = useState(null);
+//   const [isNoteModalOpen, setIsNoteModalOpen] = useState(false);
+//   const [isTitleModalOpen, setIsTitleModalOpen] = useState(false);
+
+//    const deleteSavedTask = (toDelete) => {
+//      const updatedSavedTasks = [...savedTasks];
+//      updatedSavedTasks.splice(toDelete, 1);
+//      setSavedTasks(updatedSavedTasks);
+//   };
+
+  
+
+//   const clearSavedTasks = () => {
+//     setSavedTasks([]);
+//   };
+
+//   const markAsDone = (index) => {
+//     const taskToMarkAsDone = savedTasks[index];
+//     setDoneTasks([...doneTasks, taskToMarkAsDone]);
+//     deleteSavedTask(index);
+//   };
+
+//   const openNoteModal = (index) => {
+//     setCurrentIndex(index);
+//     setIsNoteModalOpen(true);
+    
+//   };
+
+//   const openTitleModal = (index) => {
+//     setCurrentIndex(index);
+//     setIsTitleModalOpen(true);
+   
+//   };
+
+//   const updateNote = () => {
+//     const updatedSavedTasks = [...savedTasks];
+//     updatedSavedTasks[currentIndex] = {...updatedSavedTasks[currentIndex], note: note[currentIndex] || "", // update note of the specific task
+//     };
+//     setSavedTasks(updatedSavedTasks); // trigger re-render with updated task
+//     setIsNoteModalOpen(false);
+//   };
+
+//   const updateTitle = () => {
+//     const updatedSavedTasks = [...savedTasks];
+//     console.log(updatedSavedTasks)
+//     updatedSavedTasks[currentIndex] = {
+//       ...updatedSavedTasks[currentIndex],
+//       title: title[currentIndex] || "", // update title of the specific task
+//     };
+//     console.log(updatedSavedTasks)
+//     setSavedTasks(updatedSavedTasks); // trigger re-render with updated task
+//     setIsTitleModalOpen(false);
+//   };
+
+
+
+//   useEffect(()=>{
+    
+//   },[updateTitle]);
+
+//   return (
+//     <div className="h-screen relative">
+//       <h2 className="header my-4">Your saved tasks</h2>
+//       <div>
+//         <div>
+//           <button
+//             onClick={clearSavedTasks}
+//             className="btnnav btn-blue btn-blue:hover w-full mb-2"
+//           >
+//             delete all saved tasks
+//           </button>
+//         </div>
+
+//         {savedTasks.map((savedTask, index) => (
+//           <div
+//             className="rounded mb-2"
+//             key={index}
+//             style={{
+//               backgroundColor: savedTask.colorType.rgb,
+//               color: savedTask.colorType.name === "black" ? "white" : "black",
+//               border: "solid black",
+//             }}
+//           >
+//             <div className="flex gap-2">
+//               <button
+//                 onClick={() => openNoteModal(index)}
+//                 className="btnnav btn-blue"
+//               >
+//                 ADD NOTE
+//               </button>
+
+//               <button
+//                 onClick={() => openTitleModal(index)}
+//                 className="btnnav btn-blue"
+//               >
+//                 ADD TITLE
+//               </button>
+//               <button
+//                 onClick={() => markAsDone(index)}
+//                 className="btnnav btn-blue"
+//               >
+//                 MARK AS DONE
+//               </button>
+//             </div>
+//             {savedTask.title && <p>Title: {savedTask.title}</p>}
+//             <p>{savedTask.colorType.name}</p>
+//             <p>{savedTask.moveType.name}</p>
+//             <p>{savedTask.terrainType.name}</p>
+//             <p>{savedTask.holdType.name}</p>
+//             <p>{savedTask.feelingType.name}</p>
+//             <p>{savedTask.startType.name}</p>
+//             <p>{savedTask.topicType.name}</p>
+//             <p>{savedTask.styleType.name}</p>
+//             {savedTask.note && <p>Note: {savedTask.note}</p>}
+//             <button
+//               onClick={() => deleteSavedTask(index)}
+//               className="btnnav btn-blue"
+//             >
+//               DELETE THIS TASK
+//             </button>
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* Note Modal */}
+//       {isNoteModalOpen && (
+//         <NoteModal
+//           note={note[currentIndex] || ""}
+//           onClose={() => setIsNoteModalOpen(false)}
+//           onSave={(value) => {
+//             setNote({ ...note, [currentIndex]: value });
+//             updateNote();
+//           }}
+//         />
+//       )}
+
+//       {/* Title Modal */}
+//       {isTitleModalOpen && (
+//         <TitleModal
+//           title={title[currentIndex] || ""}
+//           onClose={() => setIsTitleModalOpen(false)}
+//           onSave={(titleValue) => {
+//             setTitle({ ...title, [currentIndex]: titleValue });
+//             updateTitle();
+//           }}
+//         />
+//       )}
+//     </div>
+//   );
+// }
+
+// export default SavedTasks;
+
+import React, { useEffect, useState } from "react";
 
 import NoteModal from "./NoteModal";
 import TitleModal from "./TitleModal";
@@ -144,10 +305,10 @@ function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
   const [currentIndex, setCurrentIndex] = useState(null);
   const [isNoteModalOpen, setIsNoteModalOpen] = useState(false);
   const [isTitleModalOpen, setIsTitleModalOpen] = useState(false);
- 
- 
+
   const deleteSavedTask = (toDelete) => {
-    const updatedSavedTasks = savedTasks.filter((_, index) => index !== toDelete);
+    const updatedSavedTasks = [...savedTasks];
+    updatedSavedTasks.splice(toDelete, 1);
     setSavedTasks(updatedSavedTasks);
   };
 
@@ -171,24 +332,23 @@ function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
     setIsTitleModalOpen(true);
   };
 
-  const updateNote = () => {
+  const updateNote = (newNote) => {
     const updatedSavedTasks = [...savedTasks];
     updatedSavedTasks[currentIndex] = {
       ...updatedSavedTasks[currentIndex],
-      note: note[currentIndex] || "", // update note of the specific task
+      note: newNote || "",
     };
-    setSavedTasks(updatedSavedTasks); // trigger re-render with updated task
+    setSavedTasks(updatedSavedTasks);
     setIsNoteModalOpen(false);
-    
   };
 
-  const updateTitle = () => {
+  const updateTitle = (newTitle) => {
     const updatedSavedTasks = [...savedTasks];
     updatedSavedTasks[currentIndex] = {
       ...updatedSavedTasks[currentIndex],
-      title: title[currentIndex] || "", // update title of the specific task
+      title: newTitle || "",
     };
-    setSavedTasks(updatedSavedTasks); // trigger re-render with updated task
+    setSavedTasks(updatedSavedTasks);
     setIsTitleModalOpen(false);
   };
 
@@ -205,26 +365,7 @@ function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
           </button>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {savedTasks.map((savedTask, index) => (
-
-
-
-
           <div
             className="rounded mb-2"
             key={index}
@@ -235,21 +376,12 @@ function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
             }}
           >
             <div className="flex gap-2">
-
-
-
-              
               <button
                 onClick={() => openNoteModal(index)}
                 className="btnnav btn-blue"
               >
                 ADD NOTE
               </button>
-
-
-
-
-
 
               <button
                 onClick={() => openTitleModal(index)}
@@ -281,46 +413,17 @@ function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
               DELETE THIS TASK
             </button>
           </div>
-        )
-        
-        
-        )
-        
-        
-        }
-
-        
+        ))}
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       {/* Note Modal */}
       {isNoteModalOpen && (
         <NoteModal
           note={note[currentIndex] || ""}
           onClose={() => setIsNoteModalOpen(false)}
-          onSave={(value) => {
-            setNote({ ...note, [currentIndex]: value });
-            updateNote();
+          onSave={(noteValue) => {
+            setNote({ ...note, [currentIndex]: noteValue });
+            updateNote(noteValue);
           }}
         />
       )}
@@ -330,9 +433,9 @@ function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
         <TitleModal
           title={title[currentIndex] || ""}
           onClose={() => setIsTitleModalOpen(false)}
-          onSave={(value) => {
-            setTitle({ ...title, [currentIndex]: value });
-            updateTitle();
+          onSave={(titleValue) => {
+            setTitle({ ...title, [currentIndex]: titleValue });
+            updateTitle(titleValue);  // Pass the updated title directly
           }}
         />
       )}
@@ -341,4 +444,3 @@ function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
 }
 
 export default SavedTasks;
-
