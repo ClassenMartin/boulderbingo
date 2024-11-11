@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Variable from "./Variable";
 import {
   HOLDS,
@@ -13,19 +13,26 @@ import {
 } from "./variablesFile";
 
 function AllVariables() {
+  
+  const variableData = [
+    { title: "holds", content: HOLDS },
+    { title: "colors", content: COLORS },
+    { title: "moves", content: MOVES },
+    { title: "terrains", content: TERRAINS },
+    { title: "amount of moves", content: AMOUNTOFMOVES },
+    { title: "styles", content: STYLES },
+    { title: "feelings", content: FEELINGS },
+    { title: "topics", content: TOPICS },
+    { title: "starts", content: STARTS },
+  ];
+
   return (
-    <div className="App">
-      <h2>Overview of all variables</h2>
-      <div className="overviewContainer">
-        <Variable content={HOLDS} title={"holds"}/>
-        <Variable content={COLORS} title={"colors"}/>
-        <Variable content={MOVES} title={"moves"}/>
-        <Variable content={TERRAINS} title={"terrains"}/>
-        <Variable content={AMOUNTOFMOVES} title={"amount of moves"}/>
-        <Variable content={STYLES} title={"styles"}/>
-        <Variable content={FEELINGS} title={"feelings"}/>
-        <Variable content={TOPICS} title={"topics"}/>
-        <Variable content={STARTS} title={"starts"}/>
+    <div className="h-screen">
+      <h2 className="header my-4">Overview of all variables</h2>
+      <div>
+        {variableData.map((variable, index) => (
+          <Variable key={index} content={variable.content} title={variable.title} />
+        ))}
       </div>
     </div>
   );

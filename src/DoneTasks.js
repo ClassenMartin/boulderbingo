@@ -2,13 +2,13 @@ import React from "react";
 
 function DoneTasks({ doneTasks, setDoneTasks }) {
   return (
-    <div className="App">
-      <h2>Your done tasks</h2>
+    <div className="h-screen">
+      <h2 className="header my-4">Your done tasks</h2>
       <div>
         {doneTasks.length > 0 && (
           <div>
             {doneTasks?.map((doneTask, index) => (
-              <div
+              <div className="rounded"
                 key={index}
                 style={{
                   backgroundColor: doneTask.colorType.rgb,

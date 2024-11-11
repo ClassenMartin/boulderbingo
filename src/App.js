@@ -16,7 +16,7 @@ function App() {
       <div className=" my-4 flex justify-center text-4xl ">
         <h1>BOULDERBINGO</h1>
       </div>
-      <nav className="my-4 flex justify-between gap-2 ">
+      <nav className="my-4 flex justify-between gap-2">
         <Link to="/main" className="grow btnnav btn-blue btn-blue:hover">
           Main
         </Link>

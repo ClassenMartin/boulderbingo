@@ -158,31 +158,141 @@ export const MOVES = [
 ];
 
 export const TERRAINS = [
-  { name: "slab -10", image: "", description: "" },
-  { name: "slab -5", image: "", description: "" },
-  { name: "vertical 0", image: "", description: "" },
-  { name: "overhang 10", image: "", description: "" },
-  { name: "overhang 20", image: "", description: "" },
-  { name: "overhang 30", image: "", description: "" },
-  { name: "overhang 40", image: "", description: "" },
-  { name: "roof 50", image: "", description: "" },
-  { name: "roof 60", image: "", description: "" },
-  { name: "roof 70", image: "", description: "" },
-  { name: "roof 80", image: "", description: "" },
+  {
+    name: "slab -10",
+    image: "",
+    description:
+      "A slab that leans back slightly, making it easier to balance but more technical in footwork, as it's less steep than vertical.",
+  },
+  {
+    name: "slab -5",
+    image: "",
+    description:
+      "A gentle, almost vertical slab; climbers rely on balance and precision, with less reliance on handholds due to the angle.",
+  },
+  {
+    name: "vertical 0",
+    image: "",
+    description:
+      "A perfectly vertical wall where climbers must balance equally on both hands and feet, with gravity pulling straight down.",
+  },
+  {
+    name: "overhang 10",
+    image: "",
+    description:
+      "A mild overhanging wall that begins to test a climber's strength and endurance due to the steepness.",
+  },
+  {
+    name: "overhang 20",
+    image: "",
+    description:
+      "An increasingly steep wall that requires significant upper body strength, as gravity pulls climbers outwards.",
+  },
+  {
+    name: "overhang 30",
+    image: "",
+    description:
+      "A steep overhang where climbers need a solid grip and core strength to prevent their body from swinging out.",
+  },
+  {
+    name: "overhang 40",
+    image: "",
+    description:
+      "A challenging incline, demanding both power and technical skill; climbers use core tension to maintain body control.",
+  },
+  {
+    name: "roof 50",
+    image: "",
+    description:
+      "An overhanging wall that approaches a ceiling-like angle, requiring advanced strength and technique to navigate.",
+  },
+  {
+    name: "roof 60",
+    image: "",
+    description:
+      "A nearly horizontal section that requires intense grip strength and precise footwork to prevent swinging out.",
+  },
+  {
+    name: "roof 70",
+    image: "",
+    description:
+      "A very steep, almost horizontal section where climbers rely heavily on powerful grips and core tension.",
+  },
+  {
+    name: "roof 80",
+    image: "",
+    description:
+      "An extreme overhang or roof section that is nearly horizontal, requiring advanced skill, endurance, and upper body strength.",
+  },
 ];
 
 export const AMOUNTOFMOVES = [
-  { name: "two", image: "", description: "" },
-  { name: "three", image: "", description: "" },
-  { name: "four", image: "", description: "" },
-  { name: "five", image: "", description: "" },
-  { name: "six", image: "", description: "" },
-  { name: "seven", image: "", description: "" },
-  { name: "eight", image: "", description: "" },
-  { name: "nine", image: "", description: "" },
-  { name: "ten", image: "", description: "" },
-  { name: "eleven", image: "", description: "" },
-  { name: "twelve", image: "", description: "" },
+  {
+    name: "two",
+    image: "",
+    description:
+      "A short climb or 'problem' with just two moves, usually requiring precise and powerful moves.",
+  },
+  {
+    name: "three",
+    image: "",
+    description:
+      "A sequence of three moves, often emphasizing quick transitions and efficient body positioning.",
+  },
+  {
+    name: "four",
+    image: "",
+    description:
+      "A climb that requires four moves, blending technique and power to complete.",
+  },
+  {
+    name: "five",
+    image: "",
+    description:
+      "A climb of five moves that often demands a good balance of strength and technique.",
+  },
+  {
+    name: "six",
+    image: "",
+    description:
+      "A sequence of six moves, requiring climbers to maintain endurance while executing a longer sequence.",
+  },
+  {
+    name: "seven",
+    image: "",
+    description:
+      "A seven-move problem, typically challenging a climber's stamina and technique over a medium-length route.",
+  },
+  {
+    name: "eight",
+    image: "",
+    description:
+      "A route with eight moves, demanding consistent technique and strength for completion.",
+  },
+  {
+    name: "nine",
+    image: "",
+    description:
+      "A nine-move sequence, often pushing climbers' endurance and testing their ability to conserve energy.",
+  },
+  {
+    name: "ten",
+    image: "",
+    description:
+      "A climb of ten moves, generally requiring careful pacing and endurance throughout the route.",
+  },
+  {
+    name: "eleven",
+    image: "",
+    description:
+      "An eleven-move route that challenges endurance and technique, requiring sustained effort.",
+  },
+  {
+    name: "twelve",
+    image: "",
+    description:
+      "A long twelve-move climb, demanding excellent endurance, precise technique, and energy conservation.",
+  },
 ];
 
 export const STYLES = [
