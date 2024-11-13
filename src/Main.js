@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   COLORS,
   MOVES,
@@ -16,8 +16,8 @@ import TaskDisplayDiv from "./TaskDisplayDiv";
 
 function Main({ savedTasks, setSavedTasks }) {
   const [task, setTask] = useState(null);
-  // const [savedTasks, setSavedTasks] = useState([]);
   const [selector, setSelector] = useState(false);
+  const [ric, setRic] = useState(null);
   const [preselect, setPreselect] = useState({
     holdType: null,
     colorType: null,
@@ -38,15 +38,44 @@ function Main({ savedTasks, setSavedTasks }) {
     excludeTopic: false,
     excludeStyle: false,
     excludeAmount: false,
+    excludeRIC: false
   });
+
+  
+  function generateRandomRIC(callback) {
+    let r, i, c;
+
+    do {
+      r = Math.floor(Math.random() * 5) + 1;
+      i = Math.floor(Math.random() * 5) + 1;
+      c = Math.floor(Math.random() * 5) + 1;
+    } while (
+      (r === 5 && i === 5 && c === 5) ||
+      (r === 1 && i === 1 && c === 1) ||
+      (r === 5 && i === 5) ||
+      (r === 5 && c === 5) ||
+      (i === 5 && c === 5)
+    );
+
+    const ricValue =
+    { ricScale : {
+      risk: r,
+      intensity: i,
+      complexity: c},
+      description: "check out our explaination of the RIC Scale under Variables!!",
+      type: "RIC scale",
+    };
+    setRic(ricValue);
+    if (callback) callback(ricValue)
+  }
 
   const generateRandom = (array) => {
     const random = Math.floor(Math.random() * array.length);
     return random;
   };
-
+  
   const createTask = () => {
-    
+    generateRandomRIC();
     const hold = preselect.excludeHold
       ? null
       : preselect.holdType || HOLDS[generateRandom(HOLDS)];
@@ -75,6 +104,11 @@ function Main({ savedTasks, setSavedTasks }) {
     const amount = preselect.excludeAmount
       ? null
       : preselect.amountType || AMOUNTOFMOVES[generateRandom(AMOUNTOFMOVES)];
+      // const ricScale = preselect.excludeRIC
+      // ? null
+      // : ric;
+
+      generateRandomRIC((ricValue) => {
     setTask({
       ...(preselect.excludeHold ? {} : { holdType: hold }),
       ...(preselect.excludeColor ? {} : { colorType: color }),
@@ -85,7 +119,10 @@ function Main({ savedTasks, setSavedTasks }) {
       ...(preselect.excludeTopic ? {} : { topicType: topic }),
       ...(preselect.excludeStyle ? {} : { styleType: style }),
       ...(preselect.excludeAmount ? {} : { amountType: amount }),
+      ...(preselect.excludeRIC ? {} : { ricType: ricValue})
     });
+  });
+
     setPreselect({
       colorType: null,
       moveType: null,
@@ -97,9 +134,16 @@ function Main({ savedTasks, setSavedTasks }) {
       styleType: null,
       amountType: null,
     });
-    setSelector(false)
-    
+    setSelector(false);
   };
+
+  useEffect(() => {
+    console.log("ric score from inside useEffect", ric);
+  }, [ric]);
+
+  useEffect(()=> {
+    console.log("task from from inside useEffect", task)
+  }, [task]);
 
   const selectorToggle = () => {
     setTask(null);
@@ -135,6 +179,8 @@ function Main({ savedTasks, setSavedTasks }) {
     setPreselect((prev) => ({ ...prev, excludeStyle: !prev.excludeStyle }));
   const toggleExcludeAmount = () =>
     setPreselect((prev) => ({ ...prev, excludeAmount: !prev.excludeAmount }));
+    const toggleExcludeRIC = () =>
+    setPreselect((prev) => ({ ...prev, excludeRIC: !prev.excludeRIC }));
 
   const setColorPreselect = (color) => {
     setPreselect((prev) => ({ ...prev, colorType: color }));
@@ -235,7 +281,8 @@ function Main({ savedTasks, setSavedTasks }) {
           preselect.excludeStart === true ||
           preselect.excludeTopic === true ||
           preselect.excludeStyle === true ||
-          preselect.excludeAmount === true
+          preselect.excludeAmount === true ||
+          preselect.excludeRIC === true
             ? "RANDOM TASK WITH PRESELECTED OPTIONS"
             : "RANDOM TASK"}
         </button>
@@ -567,6 +614,17 @@ function Main({ savedTasks, setSavedTasks }) {
                 ))}
               </>
             )}
+          </div>
+
+          {/* RIC Scale Section */}
+          <div className="text-center">
+            <h3>
+              <b>RIC SCALE</b>
+            </h3>
+            <button className="btn btn-red" onClick={toggleExcludeRIC}>
+              {!preselect.excludeRIC ? "Exclude SCALE" : "Include SCALE"}
+            </button>
+           
           </div>
         </div>
       )}

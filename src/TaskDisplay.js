@@ -17,6 +17,16 @@ function TaskDisplay({ task }) {
         </p>
       )}
 
+      {task.ricType && (
+        <p>
+          RIC:{" "}
+          <b>
+            {task.ricType.ricScale.risk}/{task.ricType.ricScale.intensity}/
+            {task.ricType.ricScale.complexity}
+          </b>
+        </p>
+      )}
+
       {task.moveType && (
         <p>
           MOVES: <b>{task.moveType.name}</b>
