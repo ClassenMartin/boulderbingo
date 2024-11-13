@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function TitleModal({ title, onClose, onSave }) {
   const [titleValue, setTitleValue] = useState(title);
-  console.log(title)
+  console.log(title);
 
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
@@ -16,8 +16,18 @@ function TitleModal({ title, onClose, onSave }) {
           className="w-full p-2 border mb-4"
         />
         <div className="flex justify-end gap-2">
-          <button onClick={onClose} className="btnnav btn-red">Cancel</button>
-          <button onClick={() => onSave(titleValue)} className="btnnav btn-blue">Save Title</button>
+          <button onClick={onClose} className="btnnav btn-red">
+            Cancel
+          </button>
+          <button
+            onClick={() => {
+              onSave(titleValue);
+              setTitleValue(null);
+            }}
+            className="btnnav btn-blue"
+          >
+            Save Title
+          </button>
         </div>
       </div>
     </div>

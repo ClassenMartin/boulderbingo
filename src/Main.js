@@ -9,7 +9,10 @@ import {
   STARTS,
   TOPICS,
   STYLES,
+  AMOUNTOFMOVES,
 } from "./variablesFile";
+import TaskDisplay from "./TaskDisplay";
+import TaskDisplayDiv from "./TaskDisplayDiv";
 
 function Main({ savedTasks, setSavedTasks }) {
   const [task, setTask] = useState(null);
@@ -40,6 +43,8 @@ function Main({ savedTasks, setSavedTasks }) {
     const start = preselect.startType || STARTS[generateRandom(STARTS)];
     const topic = preselect.topicType || TOPICS[generateRandom(TOPICS)];
     const style = preselect.styleType || STYLES[generateRandom(STYLES)];
+    const amount =
+      preselect.amountType || AMOUNTOFMOVES[generateRandom(AMOUNTOFMOVES)];
     setTask({
       colorType: color,
       moveType: move,
@@ -49,6 +54,7 @@ function Main({ savedTasks, setSavedTasks }) {
       startType: start,
       topicType: topic,
       styleType: style,
+      amountType: amount,
     });
   };
 
@@ -64,6 +70,7 @@ function Main({ savedTasks, setSavedTasks }) {
       startType: null,
       topicType: null,
       styleType: null,
+      amountType: null,
     });
   };
 
@@ -99,6 +106,10 @@ function Main({ savedTasks, setSavedTasks }) {
     setPreselect((prev) => ({ ...prev, styleType: style }));
   };
 
+  const setAmountPreselect = (amount) => {
+    setPreselect((prev) => ({ ...prev, amountType: amount }));
+  };
+
   const clearTerrainSelect = () => {
     setPreselect((prev) => ({ ...prev, terrainType: null }));
   };
@@ -131,8 +142,13 @@ function Main({ savedTasks, setSavedTasks }) {
     setPreselect((prev) => ({ ...prev, styleType: null }));
   };
 
+  const clearAmountSelect = () => {
+    setPreselect((prev) => ({ ...prev, amountType: null }));
+  };
+
   const saveTask = () => {
     setSavedTasks([...savedTasks, task]);
+    setTask(null);
   };
 
   return (
@@ -148,248 +164,292 @@ function Main({ savedTasks, setSavedTasks }) {
             : "RANDOM TASK"}
         </button>
 
-        <button
-          onClick={selectorToggle}
-          className="btnnav btn-blue btn-blue:hover"
-        >
+        <button onClick={selectorToggle} className="btnnav btn-blue ">
           {!selector ? "OPEN PRESELECTOR" : "CLOSE PRESELECTOR"}
         </button>
       </div>
       <div>
+        
+
         {task && (
           <div className="mb-10 flex flex-col rounded">
-            <h2 className="w-full text-center  font-black pb-3 pt-3 bg-blue-100 mb-2 rounded">
+            <h2 className="w-full text-center  font-black pb-3 pt-3 bg-blue-100 mb-4 rounded">
               YOUR TASK
             </h2>
-            <div
-              className="mb-2 rounded"
-              style={{
-                backgroundColor: task.colorType.rgb,
-                color: task.colorType.name === "black" ? "white" : "black",
-                border: "solid black",
-              }}
-            >
-              <p>
-                COLOR: <b>{task.colorType.name}</b>
-              </p>
-              <p>
-                MOVES: <b>{task.moveType.name}</b>
-              </p>
-              <p>
-                TERRAIN:<b>{task.terrainType.name}</b>
-              </p>
-              <p>
-                HOLD:<b>{task.holdType.name}</b>
-              </p>
-              <p>
-                TOPIC:<b>{task.topicType.name}</b>
-              </p>
-              <p>
-                START:<b>{task.startType.name}</b>
-              </p>
-              <p>
-                FEELING:<b>{task.feelingType.name}</b>
-              </p>
-              <p>
-                STYLE:<b>{task.styleType.name}</b>
-              </p>
-              <div></div>
-            </div>
+            {/* <TaskDisplay task={task} /> */}
             <button
               onClick={saveTask}
               disabled={!task}
-              className="btnnav btn-blue btn-blue:hover"
+              className="btnnav btn-blue btn-blue:hover mb-4"
             >
               SAVE TASK
             </button>
+            <TaskDisplayDiv task={task} />
+          
           </div>
         )}
       </div>
 
       {selector && (
-        <div>
-          <h2>SELECTOR</h2>
-          <div className="selector">
+        <div className="border-black border-2 w-full flex gap-2 p-2">
+          <div className="text-center">
+            <h3>
+              <b>COLOR</b>
+            </h3>
+            <button
+              onClick={clearColorSelect}
+              disabled={!preselect.colorType}
+              className="btnnav btn-blue"
+            >
+              CLEAR THIS OPTION
+            </button>
+            {/* <h4>you selected</h4> 
+              <b>{preselect?.colorType?.name}</b> */}
             <div>
-              <h3>PRESELECT COLOR</h3>
-              <button
-                onClick={clearColorSelect}
-                disabled={!preselect.colorType}
-                className="btn btn-light btn-light:hover"
-              >
-                CLEAR THIS OPTION
-              </button>
-              <h4>you selected {preselect?.colorType?.name}</h4>
               {COLORS.map((color, index) => (
-                <div key={index}>
+                <div
+                  key={index}
+                  className={preselect.colorType === color ? "bg-gray-500" : ""}
+                >
                   <h4>{color.name}</h4>
                   <button
                     onClick={() => setColorPreselect(color)}
-                    className="btn btn-light btn-light:hover"
+                    className="btnnav btn-blue w-full"
                   >
                     Choose
                   </button>
                 </div>
               ))}
             </div>
-            <div>
-              <h3>PRESELECT MOVE</h3>
-              <button
-                onClick={clearMoveSelect}
-                disabled={!preselect.moveType}
-                className="btn btn-light btn-light:hover"
-              >
-                CLEAR THIS OPTION
-              </button>
-              <h4>you selected {preselect?.moveType?.name}</h4>
-              {MOVES.map((move, index) => (
-                <div key={index}>
-                  <h4>{move.name}</h4>
-                  <button
-                    onClick={() => setMovePreselect(move)}
-                    className="btn btn-light btn-light:hover"
-                  >
-                    Choose
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div>
-              <h3>PRESELECT TERRAIN</h3>
-              <button
-                onClick={clearTerrainSelect}
-                disabled={!preselect.terrainType}
-                className="btn btn-light btn-light:hover"
-              >
-                CLEAR THIS OPTION
-              </button>
-              <h4>you selected {preselect?.terrainType?.name}</h4>
-              {TERRAINS.map((terrain, index) => (
-                <div key={index}>
-                  <h4>{terrain.name}</h4>
-                  <button
-                    onClick={() => setTerrainPreselect(terrain)}
-                    className="btn btn-light btn-light:hover"
-                  >
-                    Choose
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div>
-              <h3>PRESELECT HOLD</h3>
-              <button
-                onClick={clearHoldSelect}
-                disabled={!preselect.holdType}
-                className="btn btn-light btn-light:hover"
-              >
-                CLEAR THIS OPTION
-              </button>
-              <h4>you selected {preselect?.holdType?.name}</h4>
-              {HOLDS.map((hold, index) => (
-                <div key={index}>
-                  <h4>{hold.name}</h4>
-                  <button
-                    onClick={() => setHoldPreselect(hold)}
-                    className="btn btn-light btn-light:hover"
-                  >
-                    Choose
-                  </button>
-                </div>
-              ))}
-            </div>
+          </div>
 
-            <div>
-              <h3>PRESELECT FEELING</h3>
-              <button
-                onClick={clearFeelingSelect}
-                disabled={!preselect.feelingType}
-                className="btn btn-light btn-light:hover"
+          <div className="text-center">
+            <h3>
+              <b>MOVE</b>
+            </h3>
+            <button
+              onClick={clearMoveSelect}
+              disabled={!preselect.moveType}
+              className="btnnav btn-blue"
+            >
+              CLEAR THIS OPTION
+            </button>
+            {/* <h4>you selected {preselect?.moveType?.name}</h4> */}
+            {MOVES.map((move, index) => (
+              <div
+                key={index}
+                className={preselect.moveType === move ? "bg-gray-500" : ""}
               >
-                CLEAR THIS OPTION
-              </button>
-              <h4>you selected {preselect?.feelingType?.name} </h4>
-              {FEELINGS.map((feeling, index) => (
-                <div key={index}>
-                  <h4>{feeling.name}</h4>
-                  <button
-                    onClick={() => setFeelingPreselect(feeling)}
-                    className="btn btn-light btn-light:hover"
-                  >
-                    Choose
-                  </button>
-                </div>
-              ))}
-            </div>
+                <h4>{move.name}</h4>
+                <button
+                  onClick={() => setMovePreselect(move)}
+                  className="btnnav btn-blue w-full"
+                >
+                  Choose
+                </button>
+              </div>
+            ))}
+          </div>
 
-            <div>
-              <h3>PRESELECT START</h3>
-              <button
-                onClick={clearStartSelect}
-                disabled={!preselect.startType}
-                className="btn btn-light btn-light:hover"
+          <div className="text-center">
+            <h3>
+              <b>TERRAIN</b>
+            </h3>
+            <button
+              onClick={clearTerrainSelect}
+              disabled={!preselect.terrainType}
+              className="btnnav btn-blue"
+            >
+              CLEAR THIS OPTION
+            </button>
+            {/* <h4>you selected {preselect?.terrainType?.name}</h4> */}
+            {TERRAINS.map((terrain, index) => (
+              <div
+                key={index}
+                className={
+                  preselect.terrainType === terrain ? "bg-gray-500" : ""
+                }
               >
-                CLEAR THIS OPTION
-              </button>
-              <h4>you selected {preselect?.startType?.name}</h4>
-              {STARTS.map((start, index) => (
-                <div key={index}>
-                  <h4>{start.name}</h4>
-                  <button
-                    onClick={() => setStartPreselect(start)}
-                    className="btn btn-light btn-light:hover"
-                  >
-                    Choose
-                  </button>
-                </div>
-              ))}
-            </div>
+                <h4>{terrain.name}</h4>
+                <button
+                  onClick={() => setTerrainPreselect(terrain)}
+                  className="btnnav btn-blue w-full"
+                >
+                  Choose
+                </button>
+              </div>
+            ))}
+          </div>
 
-            <div>
-              <h3>PRESELECT TOPIC</h3>
-              <button
-                onClick={clearTopicSelect}
-                disabled={!preselect.topicType}
-                className="btn btn-light btn-light:hover"
+          <div className="text-center">
+            <h3>
+              <b>HOLD</b>
+            </h3>
+            
+            <button
+              onClick={clearHoldSelect}
+              disabled={!preselect.holdType}
+              className="btnnav btn-blue"
+            >
+              CLEAR THIS OPTION
+            </button>
+            {/* <h4>you selected {preselect?.holdType?.name}</h4> */}
+            {HOLDS.map((hold, index) => (
+              <div
+                key={index}
+                className={preselect.holdType === hold ? "bg-gray-500" : ""}
               >
-                CLEAR THIS OPTION
-              </button>
-              <h4>you selected {preselect?.topicType?.name}</h4>
-              {TOPICS.map((topic, index) => (
-                <div key={index}>
-                  <h4>{topic.name}</h4>
-                  <button
-                    onClick={() => setTopicPreselect(topic)}
-                    className="btn btn-light btn-light:hover"
-                  >
-                    Choose
-                  </button>
-                </div>
-              ))}
-            </div>
+                <h4>{hold.name}</h4>
+                <button
+                  onClick={() => setHoldPreselect(hold)}
+                  className="btnnav btn-blue w-full"
+                >
+                  Choose
+                </button>
+              </div>
+            ))}
+          </div>
 
-            <div>
-              <h3>PRESELECT STYLE</h3>
-              <button
-                onClick={clearStyleSelect}
-                disabled={!preselect.styleType}
-                className="btn btn-light btn-light:hover"
+          <div className="text-center">
+            <h3>
+              <b>FEELING</b>
+            </h3>
+            <button
+              onClick={clearFeelingSelect}
+              disabled={!preselect.feelingType}
+              className="btnnav btn-blue"
+            >
+              CLEAR THIS OPTION
+            </button>
+            {/* <h4>you selected {preselect?.feelingType?.name} </h4> */}
+            {FEELINGS.map((feeling, index) => (
+              <div
+                key={index}
+                className={
+                  preselect.feelingType === feeling ? "bg-gray-500" : ""
+                }
               >
-                CLEAR THIS OPTION
-              </button>
-              <h4>you selected {preselect?.styleType?.name}</h4>
-              {STYLES.map((style, index) => (
-                <div key={index}>
-                  <h4>{style.name}</h4>
-                  <button
-                    onClick={() => setStylePreselect(style)}
-                    className="btn btn-light btn-light:hover"
-                  >
-                    Choose
-                  </button>
-                </div>
-              ))}
-            </div>
+                <h4>{feeling.name}</h4>
+                <button
+                  onClick={() => setFeelingPreselect(feeling)}
+                  className="btnnav btn-blue w-full"
+                >
+                  Choose
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <h3>
+              <b>START</b>
+            </h3>
+            <button
+              onClick={clearStartSelect}
+              disabled={!preselect.startType}
+              className="btnnav btn-blue"
+            >
+              CLEAR THIS OPTION
+            </button>
+            {/* <h4>you selected {preselect?.startType?.name}</h4> */}
+            {STARTS.map((start, index) => (
+              <div
+                key={index}
+                className={preselect.startType === start ? "bg-gray-500" : ""}
+              >
+                <h4>{start.name}</h4>
+                <button
+                  onClick={() => setStartPreselect(start)}
+                  className="btnnav btn-blue w-full"
+                >
+                  Choose
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <h3>
+              <b>TOPIC</b>
+            </h3>
+            <button
+              onClick={clearTopicSelect}
+              disabled={!preselect.topicType}
+              className="btnnav btn-blue"
+            >
+              CLEAR THIS OPTION
+            </button>
+            {/* <h4>you selected {preselect?.topicType?.name}</h4> */}
+            {TOPICS.map((topic, index) => (
+              <div
+                key={index}
+                className={preselect.topicType === topic ? "bg-gray-500" : ""}
+              >
+                <h4>{topic.name}</h4>
+                <button
+                  onClick={() => setTopicPreselect(topic)}
+                  className="btnnav btn-blue w-full"
+                >
+                  Choose
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <h3>
+              <b>STYLE</b>
+            </h3>
+            <button
+              onClick={clearStyleSelect}
+              disabled={!preselect.styleType}
+              className="btnnav btn-blue"
+            >
+              CLEAR THIS OPTION
+            </button>
+            {/* <h4>you selected {preselect?.styleType?.name}</h4> */}
+            {STYLES.map((style, index) => (
+              <div
+                key={index}
+                className={preselect.styleType === style ? "bg-gray-500" : ""}
+              >
+                <h4>{style.name}</h4>
+                <button
+                  onClick={() => setStylePreselect(style)}
+                  className="btnnav btn-blue w-full"
+                >
+                  Choose
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <h3>
+              <b>AMOUNT</b>
+            </h3>
+            <button
+              onClick={clearAmountSelect}
+              disabled={!preselect.amountType}
+              className="btnnav btn-blue"
+            >
+              CLEAR THIS OPTION
+            </button>
+            {/* <h4>you selected {preselect?.styleType?.name}</h4> */}
+            {AMOUNTOFMOVES.map((amount, index) => (
+              <div
+                key={index}
+                className={preselect.amountType === amount ? "bg-gray-500" : ""}
+              >
+                <h4>{amount.name}</h4>
+                <button
+                  onClick={() => setAmountPreselect(amount)}
+                  className="btnnav btn-blue w-full"
+                >
+                  Choose
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       )}

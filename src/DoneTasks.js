@@ -1,38 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
+import TaskDisplay from "./TaskDisplay";
 
-function DoneTasks({ doneTasks, setDoneTasks }) {
+function DoneTasks({ doneTasks }) {
+
+  const [isModal, setIsModal] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+
   return (
     <div className="h-screen">
       <h2 className="header my-4">Your done tasks</h2>
-      <div>
+      
         {doneTasks.length > 0 && (
-          <div>
+          <div className="w-full flex border-black border-2 gap-2 p-2">
             {doneTasks?.map((doneTask, index) => (
-              <div className="rounded"
-                key={index}
-                style={{
-                  backgroundColor: doneTask.colorType.rgb,
-                  color:
-                    doneTask.colorType.name === "black" ? "white" : "black",
-                  border: "solid black",
-                }}
-              >
-                
-                {doneTask.title ? <p>title: {doneTask.title}</p> : ""}
-                <p>{doneTask.colorType.name}</p>
-                <p>{doneTask.moveType.name}</p>
-                <p>{doneTask.terrainType.name}</p>
-                <p>{doneTask.holdType.name}</p>
-                <p>{doneTask.feelingType.name}</p>
-                <p>{doneTask.startType.name}</p>
-                <p>{doneTask.topicType.name}</p>
-                <p>{doneTask.styleType.name}</p>
-                {doneTask.note ? <p>note: {doneTask.note}</p> : ""}
-              </div>
+          <div className="border-black border-2">{doneTask.title}</div>
+              // <TaskDisplay key={index} task={doneTask}/>
             ))}
           </div>
         )}
-      </div>
+      
     </div>
   );
 }
