@@ -6,7 +6,7 @@ function TaskDisplayDiv({ task }) {
   const [infoContent, setInfoContent] = useState(null);
 
   const taskItems = Object.values(task);
-  console.log("Task items to map over:", taskItems);
+  // console.log("Task items to map over:", taskItems);
 
   const moreInfo = (info) => {
     setInfoContent(info);
@@ -26,8 +26,8 @@ function TaskDisplayDiv({ task }) {
           className=" flex flex-col content-center text-center border-black border-2  p-2 gap-y-2"
           style={{ flexBasis: 'calc(25% - 0.5rem)' }}
         >
-          <b className="text-2xl">{item.type}</b>
-          <b>{item.name}</b>
+          <b className="text-2xl">{item?.type}</b>
+          <b>{item?.name}</b>
 
           <button className="btn btn-blue btn-blue:hover" onClick={() => moreInfo(item.description)}>
             more info
@@ -36,16 +36,16 @@ function TaskDisplayDiv({ task }) {
           <div className="w-full aspect-square ">
             {item?.image?.length > 0 ? (
               <img
-                src={item.image}
+                src={item?.image}
                 className="w-full border-black border-2 rounded aspect-square"
               />
             ) : (
               <div
                 className={`w-full aspect-square flex justify-center items-center ${
-                  item.rgb ? "bg-red-900" : ""
+                  item?.rgb ? "bg-red-900" : ""
                 }`}
                 style={
-                  item.rgb
+                  item?.rgb
                     ? {
                         backgroundColor: task.colorType.rgb,
                         color:
@@ -55,7 +55,7 @@ function TaskDisplayDiv({ task }) {
                     : {}
                 }
               >
-                {!item.rgb && <p>something went wrong</p>}
+                {!item?.rgb && <p>something went wrong</p>}
               </div>
             )}
           </div>
