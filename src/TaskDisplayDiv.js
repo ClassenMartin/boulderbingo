@@ -29,7 +29,7 @@ function TaskDisplayDiv({ task }) {
           <b className="text-2xl">{item?.type}</b>
           <b>{item?.name}</b>
 
-          <button className="btn btn-blue btn-blue:hover" onClick={() => moreInfo(item.description)}>
+          <button className="btn btn-blue btn-blue:hover" onClick={() => moreInfo(item?.description)}>
             more info
           </button>
 
@@ -49,7 +49,7 @@ function TaskDisplayDiv({ task }) {
                     ? {
                         backgroundColor: task.colorType.rgb,
                         color:
-                          task.colorType.name === "black" ? "white" : "black",
+                          task?.colorType?.name === "black" ? "white" : "black",
                         border: "solid black",
                       }
                     : {}
