@@ -355,10 +355,12 @@ setTitle({});
   useEffect(() => {}, []);
 
   const updateTitle = (newTitle) => {
+    const saved = new Date();
     const updatedSavedTasks = [...savedTasks];
     updatedSavedTasks[currentIndex] = {
       ...updatedSavedTasks[currentIndex],
       title: newTitle || "",
+      date: saved
     };
     setSavedTasks(updatedSavedTasks);
     setIsTitleModalOpen(false);

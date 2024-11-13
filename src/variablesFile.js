@@ -342,8 +342,6 @@ export const AMOUNTOFMOVES = [
   },
 ];
 
-
-
 export const STYLES = [
   {
     name: "tricky",
@@ -476,7 +474,6 @@ export const TOPICS = [
   },
 ];
 
-
 export const FEELINGS = [
   {
     name: "rage",
@@ -500,8 +497,7 @@ export const FEELINGS = [
   {
     name: "confusion",
     image: "/pictures/feelings/alldie.png",
-    description:
-      " Aprofound feeling of not knowing what to do.",
+    description: " Aprofound feeling of not knowing what to do.",
     type: "feeling",
   },
   // {
@@ -564,3 +560,169 @@ export const STARTS = [
   },
 ];
 
+export const GRADES = [
+  {
+    name: "3",
+    vScale: "VB",
+    description: "Beginner/Introductory",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "3+",
+    vScale: "VB",
+    description: "Beginner/Introductory",
+    image: "",
+    type: "grade",
+  },
+  { name: "4", vScale: "VB", description: "Easy", image: "", type: "grade" },
+  { name: "4+", vScale: "V0", description: "Easy", image: "", type: "grade" },
+  {
+    name: "5",
+    vScale: "V1",
+    description: "Moderate",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "5+",
+    vScale: "V2",
+    description: "Moderate",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "6A",
+    vScale: "V3",
+    description: "Challenging",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "6A+",
+    vScale: "V3-V4",
+    description: "Challenging",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "6B",
+    vScale: "V4",
+    description: "Difficult",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "6B+",
+    vScale: "V4-V5",
+    description: "Difficult",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "6C",
+    vScale: "V5",
+    description: "Very Difficult",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "6C+",
+    vScale: "V5-V6",
+    description: "Very Difficult",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "7A",
+    vScale: "V6",
+    description: "Advanced",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "7A+",
+    vScale: "V7",
+    description: "Advanced",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "7B",
+    vScale: "V8",
+    description: "Very Advanced",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "7B+",
+    vScale: "V8-V9",
+    description: "Very Advanced",
+    image: "",
+    type: "grade",
+  },
+  { name: "7C", vScale: "V9", description: "Elite", image: "", type: "grade" },
+  {
+    name: "7C+",
+    vScale: "V10",
+    description: "Elite",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "8A",
+    vScale: "V11",
+    description: "Expert level",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "8A+",
+    vScale: "V12",
+    description: "Expert level",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "8B",
+    vScale: "V13",
+    description: "Professional/World-class",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "8B+",
+    vScale: "V14",
+    description: "Professional/World-class",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "8C",
+    vScale: "V15",
+    description: "Exceptional ability",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "8C+",
+    vScale: "V16",
+    description: "Exceptional ability",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "9A",
+    vScale: "V17",
+    description: "Cutting-edge, hardest in the world",
+    image: "",
+    type: "grade",
+  },
+  {
+    name: "9A+",
+    vScale: "V17+",
+    description: "Cutting-edge, hardest in the world",
+    image: "",
+    type: "grade",
+  },
+];

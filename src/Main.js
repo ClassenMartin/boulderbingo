@@ -46,6 +46,7 @@ function Main({ savedTasks, setSavedTasks }) {
   };
 
   const createTask = () => {
+    
     const hold = preselect.excludeHold
       ? null
       : preselect.holdType || HOLDS[generateRandom(HOLDS)];
@@ -85,6 +86,19 @@ function Main({ savedTasks, setSavedTasks }) {
       ...(preselect.excludeStyle ? {} : { styleType: style }),
       ...(preselect.excludeAmount ? {} : { amountType: amount }),
     });
+    setPreselect({
+      colorType: null,
+      moveType: null,
+      terrainType: null,
+      holdType: null,
+      feelingType: null,
+      startType: null,
+      topicType: null,
+      styleType: null,
+      amountType: null,
+    });
+    setSelector(false)
+    
   };
 
   const selectorToggle = () => {

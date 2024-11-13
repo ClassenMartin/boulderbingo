@@ -10,10 +10,11 @@ import {
   TOPICS,
   FEELINGS,
   STARTS,
+  GRADES,
 } from "./variablesFile";
+import RIC from "./RIC";
 
 function AllVariables() {
-  
   const variableData = [
     { title: "holds", content: HOLDS },
     { title: "colors", content: COLORS },
@@ -24,6 +25,7 @@ function AllVariables() {
     { title: "feelings", content: FEELINGS },
     { title: "topics", content: TOPICS },
     { title: "starts", content: STARTS },
+    { title: "grades", content: GRADES },
   ];
 
   return (
@@ -31,9 +33,14 @@ function AllVariables() {
       <h2 className="header my-4">Overview of all variables</h2>
       <div>
         {variableData.map((variable, index) => (
-          <Variable key={index} content={variable.content} title={variable.title} />
+          <Variable
+            key={index}
+            content={variable.content}
+            title={variable.title}
+          />
         ))}
       </div>
+      <RIC />
     </div>
   );
 }
