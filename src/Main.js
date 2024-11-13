@@ -10,6 +10,7 @@ import {
   TOPICS,
   STYLES,
   AMOUNTOFMOVES,
+  GRADES,
 } from "./variablesFile";
 
 import TaskDisplayDiv from "./TaskDisplayDiv";
@@ -28,6 +29,7 @@ function Main({ savedTasks, setSavedTasks }) {
     topicType: null,
     styleType: null,
     amountType: null,
+    gradeType: null,
 
     excludeHold: false,
     excludeColor: false,
@@ -38,10 +40,10 @@ function Main({ savedTasks, setSavedTasks }) {
     excludeTopic: false,
     excludeStyle: false,
     excludeAmount: false,
-    excludeRIC: false
+    excludeRIC: false,
+    excludeGrade: false,
   });
 
-  
   function generateRandomRIC(callback) {
     let r, i, c;
 
@@ -57,37 +59,46 @@ function Main({ savedTasks, setSavedTasks }) {
       (i === 5 && c === 5)
     );
 
-    const ricValue =
-    { ricScale : {
-      risk: r,
-      intensity: i,
-      complexity: c},
-      description: "check out our explaination of the RIC Scale under Variables!!",
+    const ricValue = {
+      ricScale: {
+        risk: r,
+        intensity: i,
+        complexity: c,
+      },
+      description:
+        "check out our explaination of the RIC Scale under Variables!!",
       type: "RIC scale",
     };
     setRic(ricValue);
-    if (callback) callback(ricValue)
+    if (callback) callback(ricValue);
   }
 
   const generateRandom = (array) => {
     const random = Math.floor(Math.random() * array.length);
     return random;
   };
-  
+
   const createTask = () => {
     generateRandomRIC();
     const hold = preselect.excludeHold
       ? null
       : preselect.holdType || HOLDS[generateRandom(HOLDS)];
+
     const color = preselect.excludeColor
       ? null
       : preselect.colorType || COLORS[generateRandom(COLORS)];
+
     const move = preselect.excludeMove
       ? null
       : preselect.moveType || MOVES[generateRandom(MOVES)];
+
     const terrain = preselect.excludeTerrain
       ? null
       : preselect.terrainType || TERRAINS[generateRandom(TERRAINS)];
+
+    const grade = preselect.excludeGrade
+      ? null
+      : preselect.gradeType || GRADES[generateRandom(GRADES)];
 
     const feeling = preselect.excludeFeeling
       ? null
@@ -104,35 +115,34 @@ function Main({ savedTasks, setSavedTasks }) {
     const amount = preselect.excludeAmount
       ? null
       : preselect.amountType || AMOUNTOFMOVES[generateRandom(AMOUNTOFMOVES)];
-      // const ricScale = preselect.excludeRIC
-      // ? null
-      // : ric;
 
-      generateRandomRIC((ricValue) => {
-    setTask({
-      ...(preselect.excludeHold ? {} : { holdType: hold }),
-      ...(preselect.excludeColor ? {} : { colorType: color }),
-      ...(preselect.excludeMove ? {} : { moveType: move }),
-      ...(preselect.excludeTerrain ? {} : { terrainType: terrain }),
-      ...(preselect.excludeFeeling ? {} : { feelingType: feeling }),
-      ...(preselect.excludeStart ? {} : { startType: start }),
-      ...(preselect.excludeTopic ? {} : { topicType: topic }),
-      ...(preselect.excludeStyle ? {} : { styleType: style }),
-      ...(preselect.excludeAmount ? {} : { amountType: amount }),
-      ...(preselect.excludeRIC ? {} : { ricType: ricValue})
+    generateRandomRIC((ricValue) => {
+      setTask({
+        ...(preselect.excludeHold ? {} : { holdType: hold }),
+        ...(preselect.excludeColor ? {} : { colorType: color }),
+        ...(preselect.excludeMove ? {} : { moveType: move }),
+        ...(preselect.excludeTerrain ? {} : { terrainType: terrain }),
+        ...(preselect.excludeFeeling ? {} : { feelingType: feeling }),
+        ...(preselect.excludeStart ? {} : { startType: start }),
+        ...(preselect.excludeTopic ? {} : { topicType: topic }),
+        ...(preselect.excludeStyle ? {} : { styleType: style }),
+        ...(preselect.excludeAmount ? {} : { amountType: amount }),
+        ...(preselect.excludeGrade ? {} : { gradeType: grade }),
+        ...(preselect.excludeRIC ? {} : { ricType: ricValue }),
+      });
     });
-  });
 
     setPreselect({
+      holdType: null,
       colorType: null,
       moveType: null,
       terrainType: null,
-      holdType: null,
       feelingType: null,
       startType: null,
       topicType: null,
       styleType: null,
       amountType: null,
+      gradetype: null,
     });
     setSelector(false);
   };
@@ -141,8 +151,8 @@ function Main({ savedTasks, setSavedTasks }) {
     console.log("ric score from inside useEffect", ric);
   }, [ric]);
 
-  useEffect(()=> {
-    console.log("task from from inside useEffect", task)
+  useEffect(() => {
+    console.log("task from from inside useEffect", task);
   }, [task]);
 
   const selectorToggle = () => {
@@ -158,6 +168,7 @@ function Main({ savedTasks, setSavedTasks }) {
       topicType: null,
       styleType: null,
       amountType: null,
+      gradeType: null,
     });
   };
 
@@ -179,7 +190,9 @@ function Main({ savedTasks, setSavedTasks }) {
     setPreselect((prev) => ({ ...prev, excludeStyle: !prev.excludeStyle }));
   const toggleExcludeAmount = () =>
     setPreselect((prev) => ({ ...prev, excludeAmount: !prev.excludeAmount }));
-    const toggleExcludeRIC = () =>
+  const toggleExcludeGrade = () =>
+    setPreselect((prev) => ({ ...prev, excludeGrade: !prev.excludeGrade }));
+  const toggleExcludeRIC = () =>
     setPreselect((prev) => ({ ...prev, excludeRIC: !prev.excludeRIC }));
 
   const setColorPreselect = (color) => {
@@ -188,6 +201,10 @@ function Main({ savedTasks, setSavedTasks }) {
 
   const setMovePreselect = (move) => {
     setPreselect((prev) => ({ ...prev, moveType: move }));
+  };
+
+  const setGradePreselect = (grade) => {
+    setPreselect((prev) => ({ ...prev, gradeType: grade }));
   };
 
   const setTerrainPreselect = (terrain) => {
@@ -234,6 +251,10 @@ function Main({ savedTasks, setSavedTasks }) {
     setPreselect((prev) => ({ ...prev, colorType: null }));
   };
 
+  const clearGradeSelect = () => {
+    setPreselect((prev) => ({ ...prev, gradeType: null }));
+  };
+
   const clearFeelingSelect = () => {
     setPreselect((prev) => ({ ...prev, feelingType: null }));
   };
@@ -273,6 +294,7 @@ function Main({ savedTasks, setSavedTasks }) {
           preselect.topicType !== null ||
           preselect.styleType !== null ||
           preselect.amountType !== null ||
+          preselect.gradeType !== null ||
           preselect.excludeColor === true ||
           preselect.excludeMove === true ||
           preselect.excludeTerrain === true ||
@@ -282,6 +304,7 @@ function Main({ savedTasks, setSavedTasks }) {
           preselect.excludeTopic === true ||
           preselect.excludeStyle === true ||
           preselect.excludeAmount === true ||
+          preselect.excludeGrade === true ||
           preselect.excludeRIC === true
             ? "RANDOM TASK WITH PRESELECTED OPTIONS"
             : "RANDOM TASK"}
@@ -616,6 +639,39 @@ function Main({ savedTasks, setSavedTasks }) {
             )}
           </div>
 
+          {/* GRADE Section */}
+          <div className="text-center">
+            <h3>
+              <b>GRADE</b>
+            </h3>
+            <button className="btn btn-red" onClick={toggleExcludeGrade}>
+              {!preselect.excludeGrade ? "Exclude GRADE" : "Include GRADE"}
+            </button>
+            {!preselect.excludeGrade && (
+              <>
+                <button onClick={clearGradeSelect} className="btnnav btn-blue">
+                  CLEAR THIS OPTION
+                </button>
+                {GRADES.map((grade, index) => (
+                  <div
+                    key={index}
+                    className={
+                      preselect.gradeType === grade ? "bg-gray-500" : ""
+                    }
+                  >
+                    <h4>{grade.name}</h4>
+                    <button
+                      onClick={() => setGradePreselect(grade)}
+                      className="btnnav btn-blue w-full"
+                    >
+                      Choose
+                    </button>
+                  </div>
+                ))}
+              </>
+            )}
+          </div>
+
           {/* RIC Scale Section */}
           <div className="text-center">
             <h3>
@@ -624,7 +680,6 @@ function Main({ savedTasks, setSavedTasks }) {
             <button className="btn btn-red" onClick={toggleExcludeRIC}>
               {!preselect.excludeRIC ? "Exclude SCALE" : "Include SCALE"}
             </button>
-           
           </div>
         </div>
       )}

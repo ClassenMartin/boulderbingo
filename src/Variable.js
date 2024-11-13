@@ -61,35 +61,11 @@ function Variable({ content, title }) {
                       <b>image:</b> {variable?.image}
                     </div>
                   )}
-
                   <div className="flex-grow w-[calc(33%)] p-2">
                     <b>Definition:</b> {variable?.description}
                   </div>
                 </div>
               )
-            // <div
-            //   key={index}
-            //   className={`flex justify-between ${
-            //     index % 2 === 0 ? "bg-gray-200" : ""
-            //   }`}
-            // >
-            //   <div className="flex-grow w-[calc(33%)] p-2">
-            //     <b>name:</b> {variable?.name}
-            //   </div>
-            //   {variable?.rgb ? (
-            //     <div className="flex-grow w-[calc(33%)] p-2">
-            //       <b>color:</b> {variable?.rgb}
-            //     </div>
-            //   ) : (
-            //     <div className="flex-grow w-[calc(33%)] p-2">
-            //       <b>image:</b> {variable?.image}
-            //     </div>
-            //   )}
-
-            //   <div className="flex-grow w-[calc(33%)] p-2">
-            //     <b>Definition:</b> {variable?.description}
-            //   </div>
-            // </div>
           )}
         </div>
       )}
