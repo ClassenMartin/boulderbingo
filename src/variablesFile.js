@@ -726,3 +726,66 @@ export const GRADES = [
     type: "grade",
   },
 ];
+
+export const LEVELS = [
+  {
+    name: "1",
+    image: "",
+    description: "Initial contact - introductory challenges ahead",
+    type: "level",
+  },
+  {
+    name: "2",
+    image: "",
+    description: "Getting familiar - start exploring new skills",
+    type: "level",
+  },
+  {
+    name: "3",
+    image: "",
+    description: "Warming up - simple but essential tasks",
+    type: "level",
+  },
+  {
+    name: "4",
+    image: "",
+    description: "Picking up pace - challenges now require focus",
+    type: "level",
+  },
+  {
+    name: "5",
+    image: "",
+    description: "Halfway there - tasks are more complex",
+    type: "level",
+  },
+  {
+    name: "6",
+    image: "",
+    description: "Sharper skills needed - stay alert for new twists",
+    type: "level",
+  },
+  {
+    name: "7",
+    image: "",
+    description: "Intensifying - tests demand strategy and precision",
+    type: "level",
+  },
+  {
+    name: "8",
+    image: "",
+    description: "Advanced challenges - mastery of earlier skills required",
+    type: "level",
+  },
+  {
+    name: "9",
+    image: "",
+    description: "Penultimate test - obstacles are now very tough",
+    type: "level",
+  },
+  {
+    name: "10",
+    image: "",
+    description: "Final level - only the strongest will succeed",
+    type: "level",
+  },
+];

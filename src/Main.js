@@ -11,6 +11,7 @@ import {
   STYLES,
   AMOUNTOFMOVES,
   GRADES,
+  LEVELS
 } from "./variablesFile";
 
 import TaskDisplayDiv from "./TaskDisplayDiv";
@@ -30,6 +31,7 @@ function Main({ savedTasks, setSavedTasks }) {
     styleType: null,
     amountType: null,
     gradeType: null,
+    levelType: null,
 
     excludeHold: false,
     excludeColor: false,
@@ -42,6 +44,7 @@ function Main({ savedTasks, setSavedTasks }) {
     excludeAmount: false,
     excludeRIC: false,
     excludeGrade: false,
+    excludeLevel: false
   });
 
   function generateRandomRIC(callback) {
@@ -116,6 +119,9 @@ function Main({ savedTasks, setSavedTasks }) {
       ? null
       : preselect.amountType || AMOUNTOFMOVES[generateRandom(AMOUNTOFMOVES)];
 
+      const level = preselect.excludeLevel
+      ? null
+      : preselect.levelType || LEVELS[generateRandom(LEVELS)];
     generateRandomRIC((ricValue) => {
       setTask({
         ...(preselect.excludeHold ? {} : { holdType: hold }),
@@ -129,6 +135,7 @@ function Main({ savedTasks, setSavedTasks }) {
         ...(preselect.excludeAmount ? {} : { amountType: amount }),
         ...(preselect.excludeGrade ? {} : { gradeType: grade }),
         ...(preselect.excludeRIC ? {} : { ricType: ricValue }),
+        ...(preselect.excludeLevel ? {} : { levelType: level }),
       });
     });
 
@@ -143,6 +150,7 @@ function Main({ savedTasks, setSavedTasks }) {
       styleType: null,
       amountType: null,
       gradetype: null,
+      levelType:null
     });
     setSelector(false);
   };
@@ -169,9 +177,11 @@ function Main({ savedTasks, setSavedTasks }) {
       styleType: null,
       amountType: null,
       gradeType: null,
+      levelType:null
     });
   };
-
+  const toggleExcludeLevel = () =>
+  setPreselect((prev) => ({ ...prev, excludeLevel: !prev.excludeLevel }));
   const toggleExcludeHold = () =>
     setPreselect((prev) => ({ ...prev, excludeHold: !prev.excludeHold }));
   const toggleExcludeColor = () =>
@@ -194,6 +204,10 @@ function Main({ savedTasks, setSavedTasks }) {
     setPreselect((prev) => ({ ...prev, excludeGrade: !prev.excludeGrade }));
   const toggleExcludeRIC = () =>
     setPreselect((prev) => ({ ...prev, excludeRIC: !prev.excludeRIC }));
+
+  const setLevelPreselect = (level) => {
+    setPreselect((prev) => ({ ...prev, levelType: level }));
+  };
 
   const setColorPreselect = (color) => {
     setPreselect((prev) => ({ ...prev, colorType: color }));
@@ -237,6 +251,10 @@ function Main({ savedTasks, setSavedTasks }) {
 
   const clearTerrainSelect = () => {
     setPreselect((prev) => ({ ...prev, terrainType: null }));
+  };
+
+  const clearLevelSelect = () => {
+    setPreselect((prev) => ({ ...prev, levelType: null }));
   };
 
   const clearMoveSelect = () => {
@@ -305,6 +323,7 @@ function Main({ savedTasks, setSavedTasks }) {
           preselect.excludeStyle === true ||
           preselect.excludeAmount === true ||
           preselect.excludeGrade === true ||
+          preselect.excludeLevel === true ||
           preselect.excludeRIC === true
             ? "RANDOM TASK WITH PRESELECTED OPTIONS"
             : "RANDOM TASK"}
@@ -662,6 +681,39 @@ function Main({ savedTasks, setSavedTasks }) {
                     <h4>{grade.name}</h4>
                     <button
                       onClick={() => setGradePreselect(grade)}
+                      className="btnnav btn-blue w-full"
+                    >
+                      Choose
+                    </button>
+                  </div>
+                ))}
+              </>
+            )}
+          </div>
+
+ {/* LEVEL Section */}
+ <div className="text-center">
+            <h3>
+              <b>LEVEL</b>
+            </h3>
+            <button className="btn btn-red" onClick={toggleExcludeLevel}>
+              {!preselect.excludeLevel ? "Exclude LEVEL" : "Include LEVEL"}
+            </button>
+            {!preselect.excludeLevel && (
+              <>
+                <button onClick={clearGradeSelect} className="btnnav btn-blue">
+                  CLEAR THIS OPTION
+                </button>
+                {LEVELS.map((level, index) => (
+                  <div
+                    key={index}
+                    className={
+                      preselect.levelType === level ? "bg-gray-500" : ""
+                    }
+                  >
+                    <h4>{level.name}</h4>
+                    <button
+                      onClick={() => setGradePreselect(level)}
                       className="btnnav btn-blue w-full"
                     >
                       Choose

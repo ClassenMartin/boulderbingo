@@ -11,13 +11,13 @@ function TaskDisplay({ task }) {
       }}
     >
       {task?.title && <b className="text-lg">{task.title}</b>}
-      {task.colorType && (
+      {task?.colorType && (
         <p>
           COLOR: <b>{task.colorType.name}</b>
         </p>
       )}
 
-      {task.ricType && (
+      {task?.ricType && (
         <p>
           RIC:{" "}
           <b>
@@ -27,13 +27,19 @@ function TaskDisplay({ task }) {
         </p>
       )}
 
-      {task.moveType && (
+      {task?.moveType && (
         <p>
           MOVES: <b>{task.moveType.name}</b>
         </p>
       )}
 
-      {task.terrainType && (
+      {task?.levelType && (
+        <p>
+          LEVEL: <b>{task.levelType.name}</b>
+        </p>
+      )}
+
+      {task?.terrainType && (
         <p>
           TERRAIN: <b>{task.terrainType.name}</b>
         </p>
