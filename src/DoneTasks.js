@@ -13,8 +13,6 @@ function DoneTasks({ doneTasks }) {
   const [notFoundModal, setNotFoundModal] = useState(false);
   const [searchType, setSearchType] = useState("title");
 
-
-
   const displayDoneTask = (task) => {
     setModalContent(task);
     setIsModal(true);
@@ -29,7 +27,6 @@ function DoneTasks({ doneTasks }) {
     const matches = [];
 
     if (searchType === "title") {
-     
       doneTasks.filter((task) => {
         const match = task.title === value;
         if (match) {
@@ -38,11 +35,10 @@ function DoneTasks({ doneTasks }) {
       });
     } else {
       for (let i = 0; i < doneTasks.length; i++) {
-       
-        if (Object.values(doneTasks[i]).some(type => type.name  === value) )
-        matches.push(doneTasks[i]);
-        }
-    };
+        if (Object.values(doneTasks[i]).some((type) => type.name === value))
+          matches.push(doneTasks[i]);
+      }
+    }
 
     if (matches.length === 0) {
       setNotFoundModal(true);
@@ -77,7 +73,6 @@ function DoneTasks({ doneTasks }) {
       </div>
       {searchType === "title" && (
         <div>
-          {/* <b>search by title</b> */}
           <label className="flex gap-2">
             <input
               type="text"
@@ -85,6 +80,11 @@ function DoneTasks({ doneTasks }) {
               placeholder="insert title you are looking for"
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full p-2 border mb-4 rounded"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  search(searchTerm);
+                }
+              }}
             />
             <button
               className="btnnav btn-blue"
@@ -101,7 +101,6 @@ function DoneTasks({ doneTasks }) {
 
       {searchType === "variable" && (
         <div>
-          {/* <b>search by variable</b> */}
           <label className="flex gap-2">
             <input
               type="text"
@@ -109,6 +108,11 @@ function DoneTasks({ doneTasks }) {
               placeholder="insert variable for example: dyno, sitstart, red..."
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full p-2 border mb-4 rounded"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  search(searchTerm);
+                }
+              }}
             />
             <button
               className="btnnav btn-blue"

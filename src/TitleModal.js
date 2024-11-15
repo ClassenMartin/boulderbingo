@@ -13,6 +13,12 @@ function TitleModal({ title, onClose, onSave }) {
           value={titleValue}
           onChange={(e) => setTitleValue(e.target.value)}
           className="w-full p-2 border mb-4"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              onSave(titleValue);
+              setTitleValue(null);
+            }
+          }}
         />
         <div className="flex justify-end gap-2">
           <button onClick={onClose} className="btnnav btn-red">

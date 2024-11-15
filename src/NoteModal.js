@@ -13,6 +13,12 @@ function NoteModal({ note, onClose, onSave }) {
           value={noteValue}
           onChange={(e) => setNoteValue(e.target.value)}
           className="w-full p-2 border mb-4"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              onSave(noteValue);
+              setNoteValue(null);
+            }
+          }}
         />
         <div className="flex justify-end gap-2">
           <button onClick={onClose} className="btnnav btn-red">Cancel</button>
