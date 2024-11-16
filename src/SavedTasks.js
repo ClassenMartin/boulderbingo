@@ -296,6 +296,7 @@ import NoteModal from "./NoteModal";
 import TitleModal from "./TitleModal";
 import TaskDisplay from "./TaskDisplay";
 import WarningModal from "./WarningModal";
+import UploadPictureModal from "./UploadPictureModal";
 
 function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
   const [note, setNote] = useState({});
@@ -303,6 +304,7 @@ function SavedTasks({ savedTasks, setSavedTasks, doneTasks, setDoneTasks }) {
   const [currentIndex, setCurrentIndex] = useState(null);
   const [isNoteModalOpen, setIsNoteModalOpen] = useState(false);
   const [isTitleModalOpen, setIsTitleModalOpen] = useState(false);
+  const [isPictureModalOpen, setIsPictureModalOpen] = useState(false);
   const [warningModal, setWarningModal] = useState(false);
 
   const deleteSavedTask = (toDelete) => {
@@ -366,6 +368,23 @@ setTitle({});
     setIsTitleModalOpen(false);
   };
 
+  const uploadPicture = (newPicture) => {
+    const updatedSaveTasks = [...savedTasks];
+    updatedSaveTasks[currentIndex] = {
+      ...updatedSaveTasks[currentIndex],
+      picture: newPicture
+    };
+    setSavedTasks(updatedSaveTasks);
+    console.log(updatedSaveTasks)
+  }
+
+  const openPictureModal = () => {
+    setIsPictureModalOpen(true);
+  }
+  const closePictureModal = () => {
+    setIsPictureModalOpen(false);
+  }
+
   return (
     <div className="h-screen relative">
       <h2 className="header my-4">Your saved tasks</h2>
@@ -400,6 +419,7 @@ setTitle({});
               >
                 ADD TITLE
               </button>
+              <button onClick={()=> openPictureModal(index)} className="btnnav btn-blue">UPLOAD PICTURE</button>
               <button
                 onClick={() => deleteSavedTask(index)}
                 className="btnnav btn-blue"
@@ -440,6 +460,10 @@ setTitle({});
             updateTitle(titleValue); // Pass the updated title directly
           }}
         />
+      )}
+
+      {isPictureModalOpen && (
+        <UploadPictureModal uploadPicture={uploadPicture} closePictureModal={closePictureModal} />
       )}
 
       {warningModal && <WarningModal closeWarningModal={closeWarningModal} />}

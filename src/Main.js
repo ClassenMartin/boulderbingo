@@ -11,7 +11,7 @@ import {
   STYLES,
   AMOUNTOFMOVES,
   GRADES,
-  LEVELS
+  LEVELS,
 } from "./variablesFile";
 
 import TaskDisplayDiv from "./TaskDisplayDiv";
@@ -44,7 +44,7 @@ function Main({ savedTasks, setSavedTasks }) {
     excludeAmount: false,
     excludeRIC: false,
     excludeGrade: false,
-    excludeLevel: false
+    excludeLevel: false,
   });
 
   function generateRandomRIC(callback) {
@@ -119,7 +119,7 @@ function Main({ savedTasks, setSavedTasks }) {
       ? null
       : preselect.amountType || AMOUNTOFMOVES[generateRandom(AMOUNTOFMOVES)];
 
-      const level = preselect.excludeLevel
+    const level = preselect.excludeLevel
       ? null
       : preselect.levelType || LEVELS[generateRandom(LEVELS)];
     generateRandomRIC((ricValue) => {
@@ -150,7 +150,7 @@ function Main({ savedTasks, setSavedTasks }) {
       styleType: null,
       amountType: null,
       gradetype: null,
-      levelType:null
+      levelType: null,
     });
     setSelector(false);
   };
@@ -177,11 +177,11 @@ function Main({ savedTasks, setSavedTasks }) {
       styleType: null,
       amountType: null,
       gradeType: null,
-      levelType:null
+      levelType: null,
     });
   };
   const toggleExcludeLevel = () =>
-  setPreselect((prev) => ({ ...prev, excludeLevel: !prev.excludeLevel }));
+    setPreselect((prev) => ({ ...prev, excludeLevel: !prev.excludeLevel }));
   const toggleExcludeHold = () =>
     setPreselect((prev) => ({ ...prev, excludeHold: !prev.excludeHold }));
   const toggleExcludeColor = () =>
@@ -336,9 +336,6 @@ function Main({ savedTasks, setSavedTasks }) {
       <div>
         {task && (
           <div className="mb-10 flex flex-col rounded">
-            <h2 className="w-full text-center  font-black pb-3 pt-3 bg-blue-100 mb-4 rounded">
-              YOUR TASK
-            </h2>
             {/* <TaskDisplay task={task} /> */}
             <button
               onClick={saveTask}
@@ -347,6 +344,9 @@ function Main({ savedTasks, setSavedTasks }) {
             >
               SAVE TASK
             </button>
+            <h2 className="w-full text-center  font-black pb-3 pt-3 bg-blue-100 mb-4 rounded">
+              YOUR TASK
+            </h2>
             <TaskDisplayDiv task={task} />
           </div>
         )}
@@ -691,8 +691,8 @@ function Main({ savedTasks, setSavedTasks }) {
             )}
           </div>
 
- {/* LEVEL Section */}
- <div className="text-center">
+          {/* LEVEL Section */}
+          <div className="text-center">
             <h3>
               <b>LEVEL</b>
             </h3>

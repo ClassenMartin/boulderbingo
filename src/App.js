@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import AllVariables from "./AllVariables";
@@ -8,10 +8,24 @@ import DoneTasks from "./DoneTasks";
 import SavedTasks from "./SavedTasks";
 
 function App() {
-  const [savedTasks, setSavedTasks] = useState([]);
-  const [doneTasks, setDoneTasks] = useState([]);
+  const [savedTasks, setSavedTasks] = useState(() => {
+    const storedTasksStorage = localStorage.getItem('savedTasks');
+    return storedTasksStorage? JSON.parse(storedTasksStorage) : [];
+  });
+  const [doneTasks, setDoneTasks] = useState(() => {
+    const doneTasksStorage = localStorage.getItem('doneTasks');
+    return doneTasksStorage ? JSON.parse(doneTasksStorage) : [];
+  });
 
- 
+  useEffect(() => {
+    localStorage.setItem('savedTasks', JSON.stringify(savedTasks));
+  }, [savedTasks]);
+
+  
+  useEffect(() => {
+    localStorage.setItem('doneTasks', JSON.stringify(doneTasks));
+  }, [doneTasks]);
+  
   return (
     <div className="p-10 flex justify-center flex-col ">
       <div className=" my-4 flex justify-center text-4xl ">
