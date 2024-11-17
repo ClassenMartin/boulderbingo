@@ -701,7 +701,7 @@ function Main({ savedTasks, setSavedTasks }) {
             </button>
             {!preselect.excludeLevel && (
               <>
-                <button onClick={clearGradeSelect} className="btnnav btn-blue">
+                <button onClick={clearLevelSelect} className="btnnav btn-blue">
                   CLEAR THIS OPTION
                 </button>
                 {LEVELS.map((level, index) => (
@@ -713,7 +713,7 @@ function Main({ savedTasks, setSavedTasks }) {
                   >
                     <h4>{level.name}</h4>
                     <button
-                      onClick={() => setGradePreselect(level)}
+                      onClick={() => setLevelPreselect(level)}
                       className="btnnav btn-blue w-full"
                     >
                       Choose
