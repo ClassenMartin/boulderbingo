@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function UploadPictureModal({ uploadPicture, closePictureModal }) {
   const [uploadedPicture, setUploadedPicture] = useState(null);
-  const [completeUpload, setCompleteUpload] = useState(false);
+  // const [completeUpload, setCompleteUpload] = useState(false);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -14,7 +14,7 @@ function UploadPictureModal({ uploadPicture, closePictureModal }) {
   const handleSubmit = () => {
     if (uploadedPicture) {
       uploadPicture(uploadedPicture); 
-      setCompleteUpload(true);
+      // setCompleteUpload(true);
       console.log('uploaded picture')
 
     } else {

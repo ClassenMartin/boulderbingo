@@ -59,6 +59,7 @@ function TaskDisplayDiv({ task }) {
                 <img
                   src={item?.image}
                   className="w-full border-black border-2 rounded aspect-square"
+                  alt=""
                 />
               ) : (
                 <div
