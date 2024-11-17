@@ -92,7 +92,7 @@ function TaskDisplay({ task }) {
       {task.picture && (
         <div className="border-black border-2 w-1/2">
           <div>
-            <img src={URL.createObjectURL(task.picture)} alt="Task" className="w-full h-auto" />
+            <img src={task.picture} alt="Task" className="w-full h-auto" />
           </div>
         </div>
       )}

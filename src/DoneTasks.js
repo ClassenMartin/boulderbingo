@@ -27,7 +27,7 @@ function DoneTasks({ doneTasks }) {
     const matches = [];
 
     if (searchType === "title") {
-      doneTasks.filter((task) => {
+      doneTasks.forEach((task) => {
         const match = task.title === value;
         if (match) {
           matches.push(task);
