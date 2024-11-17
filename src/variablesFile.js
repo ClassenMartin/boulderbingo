@@ -128,56 +128,56 @@ export const MOVES = [
     name: "dyno",
     image: "",
     description:
-      "A dynamic move where the climber jumps to reach a hold, often involving both hands and feet leaving the wall.",
+      "A jump or leap in which both feet leave and return again once the target is caught.",
     type: "move",
   },
   {
     name: "flip",
     image: "",
     description:
-      "A move where the climber rotates their body in the air, usually to adjust to a new position or reach a hold.",
+      "missing",
     type: "move",
   },
   {
     name: "paddle",
     image: "",
     description:
-      "A move where the climber uses both hands to press against the holds on either side, typically used in wide or overhung positions.",
+      "missing.",
     type: "move",
   },
   {
     name: "mantle",
     image: "",
     description:
-      "A move where the climber pushes down on a hold with their hands while bringing their body up over the top of a ledge or lip.",
+      "A move used to surmount feature in the absence of any useful holds directly above. It involves pushing down on a feature instead of pulling oneself up.",
     type: "move",
   },
   {
     name: "heelhook",
     image: "",
     description:
-      "A move where the climber places their heel on a hold to gain leverage and pull themselves up, often used on overhangs.",
+      "Using the back of the heel to apply pressure to a hold for balance or leverage; this technique requires pulling with the heel of the foot.",
     type: "move",
   },
   {
     name: "toehook",
     image: "",
     description:
-      "A move where the climber hooks their toes around a hold, typically used to gain stability or control on steep terrain.",
+      "Wrapping the top of the foot up or around a rock feature.",
     type: "move",
   },
   {
     name: "run in",
     image: "",
     description:
-      "A move where the climber approaches the wall and uses momentum to run into a series of holds, often used in bouldering problems.",
+      "missing.",
     type: "move",
   },
   {
     name: "runner",
     image: "",
     description:
-      "A move where the climber moves fluidly along a series of holds, typically transitioning from one set of grips to the next with minimal effort.",
+      "missing",
     type: "move",
   },
 ];
@@ -186,158 +186,143 @@ export const TERRAINS = [
   {
     name: "slab -10",
     image: "",
-    description:
-      "A slab that leans back slightly, making it easier to balance but more technical in footwork, as it's less steep than vertical.",
+    description: "Slightly inclined backward.",
     type: "terrain",
   },
   {
     name: "slab -5",
     image: "",
-    description:
-      "A gentle, almost vertical slab; climbers rely on balance and precision, with less reliance on handholds due to the angle.",
+    description: "Almost upright, leaning backward.",
     type: "terrain",
   },
   {
     name: "vertical 0",
     image: "",
-    description:
-      "A perfectly vertical wall where climbers must balance equally on both hands and feet, with gravity pulling straight down.",
+    description: "Completely upright.",
     type: "terrain",
   },
   {
     name: "overhang 10",
     image: "",
-    description:
-      "A mild overhanging wall that begins to test a climber's strength and endurance due to the steepness.",
+    description: "Mildly leaning forward.",
     type: "terrain",
   },
   {
     name: "overhang 20",
     image: "",
-    description:
-      "An increasingly steep wall that requires significant upper body strength, as gravity pulls climbers outwards.",
+    description: "Steeper forward incline.",
     type: "terrain",
   },
   {
     name: "overhang 30",
     image: "",
-    description:
-      "A steep overhang where climbers need a solid grip and core strength to prevent their body from swinging out.",
+    description: "Significantly leaning forward.",
     type: "terrain",
   },
   {
     name: "overhang 40",
     image: "",
-    description:
-      "A challenging incline, demanding both power and technical skill; climbers use core tension to maintain body control.",
+    description: "Challenging forward angle.",
     type: "terrain",
   },
   {
     name: "roof 50",
     image: "",
-    description:
-      "An overhanging wall that approaches a ceiling-like angle, requiring advanced strength and technique to navigate.",
+    description: "Closer to fully horizontal then vertical.",
     type: "terrain",
   },
   {
     name: "roof 60",
     image: "",
-    description:
-      "A nearly horizontal section that requires intense grip strength and precise footwork to prevent swinging out.",
+    description: "Nearly horizontal surface.",
     type: "terrain",
   },
   {
     name: "roof 70",
     image: "",
-    description:
-      "A very steep, almost horizontal section where climbers rely heavily on powerful grips and core tension.",
+    description: "Very close to horizontal.",
     type: "terrain",
   },
   {
     name: "roof 80",
     image: "",
-    description:
-      "An extreme overhang or roof section that is nearly horizontal, requiring advanced skill, endurance, and upper body strength.",
+    description: "Almost a flat roof.",
     type: "terrain",
   },
+  {
+    name: "roof 90",
+    image: "",
+    description: "A flat roof.",
+    type: "terrain",
+  },
+
 ];
 
 export const AMOUNTOFMOVES = [
   {
     name: "two",
     image: "",
-    description:
-      "A short climb or 'problem' with just two moves, usually requiring precise and powerful moves.",
+    description: "The smallest prime number.",
     type: "amount",
   },
   {
     name: "three",
     image: "",
-    description:
-      "A sequence of three moves, often emphasizing quick transitions and efficient body positioning.",
+    description: "The number of sides in a triangle.",
     type: "amount",
   },
   {
     name: "four",
     image: "",
-    description:
-      "A climb that requires four moves, blending technique and power to complete.",
+    description: "The number of seasons in a year.",
     type: "amount",
   },
   {
     name: "five",
     image: "",
-    description:
-      "A climb of five moves that often demands a good balance of strength and technique.",
+    description: "The number of fingers on one hand.",
     type: "amount",
   },
   {
     name: "six",
     image: "",
-    description:
-      "A sequence of six moves, requiring climbers to maintain endurance while executing a longer sequence.",
+    description: "Insects typically have six legs.",
     type: "amount",
   },
   {
     name: "seven",
     image: "",
-    description:
-      "A seven-move problem, typically challenging a climber's stamina and technique over a medium-length route.",
+    description: "The number of continents on Earth.",
     type: "amount",
   },
   {
     name: "eight",
     image: "",
-    description:
-      "A route with eight moves, demanding consistent technique and strength for completion.",
+    description: "Spiders have eight legs.",
     type: "amount",
   },
   {
     name: "nine",
     image: "",
-    description:
-      "A nine-move sequence, often pushing climbers' endurance and testing their ability to conserve energy.",
+    description: "The highest single-digit number.",
     type: "amount",
   },
   {
     name: "ten",
     image: "",
-    description:
-      "A climb of ten moves, generally requiring careful pacing and endurance throughout the route.",
+    description: "The basis of our decimal system.",
     type: "amount",
   },
   {
     name: "eleven",
     image: "",
-    description:
-      "An eleven-move route that challenges endurance and technique, requiring sustained effort.",
+    description: "A number often associated with magic.",
     type: "amount",
   },
   {
     name: "twelve",
     image: "",
-    description:
-      "A long twelve-move climb, demanding excellent endurance, precise technique, and energy conservation.",
+    description: "The number of months in a year.",
     type: "amount",
   },
 ];
@@ -346,53 +331,47 @@ export const STYLES = [
   {
     name: "tricky",
     image: "",
-    description:
-      "A climbing style that requires precise footwork, balance, and technique to overcome difficult moves.",
+    description: "Difficult to deal with or handle.",
     type: "style",
   },
   {
     name: "power",
     image: "",
-    description:
-      "A climbing style that relies on strength, explosiveness, and physical endurance to tackle challenging moves.",
+    description: "The ability to do something or act in a particular way.",
     type: "style",
   },
   {
     name: "delicate",
     image: "",
-    description:
-      "A climbing style that emphasizes subtle movements, light touches, and fine control to maintain balance and precision.",
+    description: "Easily broken or requiring careful handling.",
     type: "style",
   },
   {
     name: "chaos",
     image: "",
-    description:
-      "A climbing style where the climber uses a mix of powerful and unpredictable movements, often improvising to make it through tough sections.",
+    description: "Complete disorder and confusion.",
     type: "style",
   },
   {
     name: "straight forward",
     image: "",
-    description:
-      "A climbing style that involves a direct approach with minimal technical complexity, focusing on clear, simple moves.",
+    description: "Simple and easy to understand.",
     type: "style",
   },
   {
     name: "ballern",
     image: "",
-    description:
-      "A bold and confident climbing style that involves taking risks and committing to powerful, dynamic movements.",
+    description: "German slang for 'to shoot' or 'to go all out.'",
     type: "style",
   },
   {
     name: "low percentage",
     image: "",
-    description:
-      "A climbing style that involves attempting difficult moves with a lower likelihood of success, often relying on precision and timing.",
+    description: "A small or unlikely chance of success.",
     type: "style",
   },
 ];
+
 
 export const TOPICS = [
   {
@@ -500,62 +479,62 @@ export const FEELINGS = [
     description: " Aprofound feeling of not knowing what to do.",
     type: "feeling",
   },
-  // {
-  //   name: "madness",
-  //   image: "/pictures/feelings/rage.png",
-  //   description:
-  //     "A state of mental instability or extreme irrational behavior.",
-  //   type: "feeling",
-  // },
-  // {
-  //   name: "we will all die",
-  //   image: "/pictures/feelings/alldie.png",
-  //   description: "A grim realization of the inevitable nature of mortality.",
-  //   type: "feeling",
-  // },
+  {
+    name: "madness",
+    image: "/pictures/feelings/rage.png",
+    description:
+      "A state of mental instability or extreme irrational behavior.",
+    type: "feeling",
+  },
+  {
+    name: "we will all die",
+    image: "/pictures/feelings/alldie.png",
+    description: "A grim realization of the inevitable nature of mortality.",
+    type: "feeling",
+  },
 ];
 
 export const STARTS = [
   {
     name: "one hold",
-    image: "/pictures/colors/flowerSkinny.jpg",
+    image: "",
     description:
-      "A climbing start where the climber begins with only one hand or foot on a hold, requiring precise movement to establish balance.",
+      "A climb that starts with both hands on the first hold",
     type: "start",
   },
   {
     name: "two holds",
-    image: "/pictures/colors/flowerSkinny.jpg",
+    image: "",
     description:
-      "A climbing start where the climber begins with both hands or feet on separate holds, often requiring quick coordination and control.",
+      "A climb that starts with two seperate starting holds",
     type: "start",
   },
   {
     name: "run in",
-    image: "/pictures/colors/flowerSkinny.jpg",
+    image: "",
     description:
-      "A start where the climber approaches the wall and uses momentum to quickly engage the first hold, often with a dynamic movement.",
+      "A start where the climber approaches the wall and uses momentum to quickly run up the first move/moves.",
     type: "start",
   },
   {
     name: "jumpstart",
-    image: "/pictures/colors/flowerSkinny.jpg",
+    image: "",
     description:
-      "A start where the climber jumps to reach the first hold, requiring explosive power and timing.",
+      "A start where the climber jumps to reach the first hold.",
     type: "start",
   },
   {
     name: "standstart",
     image: "",
     description:
-      "A climbing start where the climber begins by standing on the ground and placing their hands or feet on the first holds to initiate the climb.",
+      "A climb that starts in a standing position.",
     type: "start",
   },
   {
     name: "sitstart",
-    image: "/pictures/colors/flowerSkinny.jpg",
+    image: "/",
     description:
-      "A start where the climber begins seated on the ground, typically with hands and feet on the first holds, requiring strong core engagement to stand up.",
+      "A start where the climber begins seated on the ground.",
     type: "start",
   },
 ];
@@ -714,13 +693,6 @@ export const GRADES = [
   {
     name: "9A",
     vScale: "V17",
-    description: "Cutting-edge, hardest in the world",
-    image: "",
-    type: "grade",
-  },
-  {
-    name: "9A+",
-    vScale: "V17+",
     description: "Cutting-edge, hardest in the world",
     image: "",
     type: "grade",
