@@ -3,15 +3,19 @@ import React from "react";
 function TaskDisplay({ task }) {
   return (
     <div
-      className="mb-2 rounded p-2 flex"
+      className="mb-2 rounded p-2 flex border-black b-2 bg-white"
       style={{
-        backgroundColor: task?.colorType?.rgb,
-        color: task?.colorType?.name === "black" ? "white" : "black",
         border: "solid black",
       }}
     >
-      <div className="border-black border-2 w-1/2">
-        {task?.title && <b className="text-lg">{task.title}</b>}
+      <div className="border-black border-2 w-1/3 rounded p-2"
+      style={{ backgroundColor: task?.colorType?.rgb,
+        color: task?.colorType?.name === "black" ? "white" : "black",}}>
+        {task?.title && (
+          <h3 className="text-center">
+            <b>{task.title}</b>
+          </h3>
+        )}
         {task?.colorType && (
           <p>
             COLOR: <b>{task.colorType.name}</b>
@@ -81,21 +85,22 @@ function TaskDisplay({ task }) {
             AMOUNT: <b>{task.amountType.name}</b>
           </p>
         )}
-
-        {task.note && (
-          <p>
-            Note:
-            <b> {task.note}</b>
-          </p>
-        )}
       </div>
-      {task.picture && (
-        <div className="border-black border-2 w-1/2">
+      <div className=" p-2 w-1/3">
+        <h3 className="text-center">
+          <b> NOTE:</b>
+        </h3>
+        {task.note && <p>{task.note}</p>}
+      </div>
+
+      <div className="p-2 w-1/3 border-black border-2 rounded">
+        {task.picture && (
           <div>
             <img src={task.picture} alt="Task" className="w-full h-auto" />
           </div>
-        </div>
-      )}
+        )}
+      </div>
+      {/* )} */}
     </div>
   );
 }

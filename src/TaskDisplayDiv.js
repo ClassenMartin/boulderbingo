@@ -22,7 +22,7 @@ function TaskDisplayDiv({ task }) {
       {taskItems.map((item, index) => (
         <div
           key={index}
-          className=" flex flex-col content-center text-center border-black border-2  p-2 gap-y-2"
+          className=" flex flex-col content-center text-center border-black border-2  p-2 gap-y-2 rounded bg-gray-200"
           style={{ flexBasis: "calc(25% - 0.5rem)" }}
         >
           <b className="text-2xl">{item?.type}</b>
@@ -42,7 +42,7 @@ function TaskDisplayDiv({ task }) {
             more info
           </button>
           {item?.ricScale ? (
-            <div className="w-full aspect-square flex flex-col justify-center border-black border-2 rounded">
+            <div className="w-full aspect-square flex flex-col justify-center border-black border-2 rounded bg-white">
               <p>
                 Risk: <b>{item?.ricScale?.risk}</b>
               </p>
@@ -79,7 +79,13 @@ function TaskDisplayDiv({ task }) {
                       : {}
                   }
                 >
-                  {!item?.rgb && <p>no image...sorry</p>}
+                  <div className={!item.rgb ? "bg-white w-full h-full" : ""}>
+                    {!item?.rgb && (
+                      <div className="bg-white w-full h-full">
+                        <p>no image...sorry</p>
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>

@@ -435,39 +435,39 @@ export const TOPICS = [
 export const FEELINGS = [
   {
     name: "rage",
-    image: "/pictures/feelings/rage.png",
+    image: "",
     description: "A strong feeling of intense anger or fury.",
     type: "feeling",
   },
   {
     name: "happiness",
-    image: "/pictures/feelings/happy.png",
+    image: "",
     description:
       "A state of contentment and joy, often associated with positive experiences.",
     type: "feeling",
   },
   {
     name: "joy",
-    image: "/pictures/feelings/joy.png",
+    image: "",
     description: "A deep feeling of great pleasure and delight.",
     type: "feeling",
   },
   {
     name: "confusion",
-    image: "/pictures/feelings/alldie.png",
+    image: "",
     description: " Aprofound feeling of not knowing what to do.",
     type: "feeling",
   },
   {
     name: "madness",
-    image: "/pictures/feelings/rage.png",
+    image: "",
     description:
       "A state of mental instability or extreme irrational behavior.",
     type: "feeling",
   },
   {
     name: "we will all die",
-    image: "/pictures/feelings/alldie.png",
+    image: "",
     description: "A grim realization of the inevitable nature of mortality.",
     type: "feeling",
   },
@@ -507,7 +507,7 @@ export const STARTS = [
   },
   {
     name: "sitstart",
-    image: "/",
+    image: "",
     description: "A start where the climber begins seated on the ground.",
     type: "start",
   },

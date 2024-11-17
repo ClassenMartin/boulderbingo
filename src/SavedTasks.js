@@ -400,9 +400,8 @@ setTitle({});
 
         {savedTasks.map((savedTask, index) => (
           <div
-            className={` rounded mb-2 mt-2 p-2 border-black border-2 ${
-              index % 2 === 0 ? "bg-gray-200" : ""
-            }`}
+            className="
+            rounded mb-2 mt-2 p-2 border-black border-2 bg-gray-100"
             key={index}
           >
             <div className="flex gap-2 mb-4 mt-4">

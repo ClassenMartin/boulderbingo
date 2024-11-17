@@ -344,9 +344,9 @@ function Main({ savedTasks, setSavedTasks }) {
             >
               SAVE TASK
             </button>
-            <h2 className="w-full text-center  font-black pb-3 pt-3 bg-blue-100 mb-4 rounded">
+            {/* <h2 className="w-full text-center  font-black pb-3 pt-3 bg-blue-100 mb-4 rounded">
               YOUR TASK
-            </h2>
+            </h2> */}
             <TaskDisplayDiv task={task} />
           </div>
         )}
@@ -372,7 +372,7 @@ function Main({ savedTasks, setSavedTasks }) {
                   <div
                     key={index}
                     className={
-                      preselect.colorType === color ? "bg-gray-500" : ""
+                      preselect.colorType === color ? "bg-gray-400 font-semibold rounded mt-2 border-black border-2" : ""
                     }
                   >
                     <h4>{color.name}</h4>
@@ -404,7 +404,11 @@ function Main({ savedTasks, setSavedTasks }) {
                 {MOVES.map((move, index) => (
                   <div
                     key={index}
-                    className={preselect.moveType === move ? "bg-gray-500" : ""}
+                    className={
+                      preselect.moveType === move
+                        ? "bg-gray-400 font-semibold rounded mt-2 border-black border-2"
+                        : ""
+                    }
                   >
                     <h4>{move.name}</h4>
                     <button
@@ -441,7 +445,9 @@ function Main({ savedTasks, setSavedTasks }) {
                   <div
                     key={index}
                     className={
-                      preselect.terrainType === terrain ? "bg-gray-500" : ""
+                      preselect.terrainType === terrain
+                        ? "bg-gray-400 font-semibold rounded mt-2 border-black border-2"
+                        : ""
                     }
                   >
                     <h4>{terrain.name}</h4>
@@ -473,7 +479,11 @@ function Main({ savedTasks, setSavedTasks }) {
                 {HOLDS.map((hold, index) => (
                   <div
                     key={index}
-                    className={preselect.holdType === hold ? "bg-gray-500" : ""}
+                    className={
+                      preselect.holdType === hold
+                        ? "bg-gray-400 font-semibold rounded mt-2 border-black border-2"
+                        : ""
+                    }
                   >
                     <h4>{hold.name}</h4>
                     <button
@@ -510,7 +520,9 @@ function Main({ savedTasks, setSavedTasks }) {
                   <div
                     key={index}
                     className={
-                      preselect.feelingType === feeling ? "bg-gray-500" : ""
+                      preselect.feelingType === feeling
+                        ? "bg-gray-400 font-semibold rounded mt-2 border-black border-2"
+                        : ""
                     }
                   >
                     <h4>{feeling.name}</h4>
@@ -543,7 +555,9 @@ function Main({ savedTasks, setSavedTasks }) {
                   <div
                     key={index}
                     className={
-                      preselect.startType === start ? "bg-gray-500" : ""
+                      preselect.startType === start
+                        ? "bg-gray-400 font-semibold rounded mt-2 border-black border-2"
+                        : ""
                     }
                   >
                     <h4>{start.name}</h4>
@@ -576,7 +590,9 @@ function Main({ savedTasks, setSavedTasks }) {
                   <div
                     key={index}
                     className={
-                      preselect.topicType === topic ? "bg-gray-500" : ""
+                      preselect.topicType === topic
+                        ? "bg-gray-400 font-semibold rounded mt-2 border-black border-2"
+                        : ""
                     }
                   >
                     <h4>{topic.name}</h4>
@@ -609,7 +625,9 @@ function Main({ savedTasks, setSavedTasks }) {
                   <div
                     key={index}
                     className={
-                      preselect.styleType === style ? "bg-gray-500" : ""
+                      preselect.styleType === style
+                        ? "bg-gray-400 font-semibold rounded mt-2 border-black border-2"
+                        : ""
                     }
                   >
                     <h4>{style.name}</h4>
@@ -642,7 +660,9 @@ function Main({ savedTasks, setSavedTasks }) {
                   <div
                     key={index}
                     className={
-                      preselect.amountType === amount ? "bg-gray-500" : ""
+                      preselect.amountType === amount
+                        ? "bg-gray-400 font-semibold rounded mt-2 border-black border-2"
+                        : ""
                     }
                   >
                     <h4>{amount.name}</h4>
@@ -675,7 +695,9 @@ function Main({ savedTasks, setSavedTasks }) {
                   <div
                     key={index}
                     className={
-                      preselect.gradeType === grade ? "bg-gray-500" : ""
+                      preselect.gradeType === grade
+                        ? "bg-gray-400 font-semibold rounded mt-2 border-black border-2"
+                        : ""
                     }
                   >
                     <h4>{grade.name}</h4>
@@ -708,7 +730,9 @@ function Main({ savedTasks, setSavedTasks }) {
                   <div
                     key={index}
                     className={
-                      preselect.levelType === level ? "bg-gray-500" : ""
+                      preselect.levelType === level
+                        ? "bg-gray-400 font-semibold rounded mt-2 border-black border-2"
+                        : ""
                     }
                   >
                     <h4>{level.name}</h4>
