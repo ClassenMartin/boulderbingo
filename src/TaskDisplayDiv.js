@@ -79,7 +79,7 @@ function TaskDisplayDiv({ task }) {
                       : {}
                   }
                 >
-                  {!item?.rgb && <p>something went wrong</p>}
+                  {!item?.rgb && <p>no image...sorry</p>}
                 </div>
               )}
             </div>
