@@ -70,7 +70,7 @@ function Main({ savedTasks, setSavedTasks }) {
       },
       description:
         "check out our explaination of the RIC Scale under Variables!!",
-      type: "RIC scale",
+      type: "RIC",
     };
     setRic(ricValue);
     if (callback) callback(ricValue);

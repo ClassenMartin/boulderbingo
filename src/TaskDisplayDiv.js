@@ -42,7 +42,7 @@ function TaskDisplayDiv({ task }) {
             more info
           </button>
           {item?.ricScale ? (
-            <div className="w-full aspect-square flex flex-col justify-center">
+            <div className="w-full aspect-square flex flex-col justify-center border-black border-2 rounded">
               <p>
                 Risk: <b>{item?.ricScale?.risk}</b>
               </p>
@@ -63,7 +63,7 @@ function TaskDisplayDiv({ task }) {
                 />
               ) : (
                 <div
-                  className={`w-full aspect-square flex justify-center items-center ${
+                  className={`w-full aspect-square flex justify-center items-center border-black border-2 rounded ${
                     item?.rgb ? "bg-red-900" : ""
                   }`}
                   style={

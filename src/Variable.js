@@ -31,7 +31,7 @@ function Variable({ content, title }) {
                   </div>
 
                   <div className="flex-grow w-[calc(25%)] p-2">
-                    <b>image:</b> {variable?.image}
+                    <div><image src={variable?.image}/></div>
                   </div>
 
                   <div className="flex-grow w-[calc(25%)] p-2">
@@ -58,7 +58,7 @@ function Variable({ content, title }) {
                     </div>
                   ) : (
                     <div className="flex-grow w-[calc(33%)] p-2">
-                      <b>image:</b> {variable?.image}
+                      <div><img src={variable?.image} className="border-black border-2"/></div>
                     </div>
                   )}
                   <div className="flex-grow w-[calc(33%)] p-2">

@@ -1,49 +1,49 @@
 export const HOLDS = [
   {
     name: "crimps",
-    image: "",
+    image: "/pictures/holds/Crimp.jpg",
     description:
       "Small holds that require the climber to grip with their fingers bent at a sharp angle, often using just the fingertips.",
     type: "hold",
   },
   {
     name: "jugs",
-    image: "",
+    image: "/pictures/holds/Jug.jpg",
     description:
       "Large, deep holds that can be easily gripped with an open hand, providing a comfortable rest for climbers.",
     type: "hold",
   },
   {
     name: "slopers",
-    image: "",
+    image: "/pictures/holds/Sloper.jpg",
     description:
       "Rounded, sloping holds that require the climber to use friction and body positioning to maintain grip.",
     type: "hold",
   },
   {
     name: "pockets",
-    image: "",
+    image: "/pictures/holds/Pocket.jpg",
     description:
       "Holds with a small hole or pocket, where the climber inserts one or more fingers to gain control.",
     type: "hold",
   },
   {
     name: "volumes",
-    image: "",
+    image: "/pictures/holds/Volumen.jpg",
     description:
       "Large, angular holds that extend from the wall, often used to create features like ledges or ramps.",
     type: "hold",
   },
   {
     name: "crack",
-    image: "",
+    image: "/pictures/holds/Crack.jpg",
     description:
       "A hold formed by a narrow gap or crack in the rock, requiring a variety of techniques like jamming or stemming to climb.",
     type: "hold",
   },
   {
     name: "pinches",
-    image: "",
+    image: "/pictures/holds/Pinch.jpg",
     description:
       "Holds that require the climber to pinch with their fingers and thumb, often used for smaller or awkwardly shaped grips.",
     type: "hold",
@@ -134,15 +134,13 @@ export const MOVES = [
   {
     name: "flip",
     image: "",
-    description:
-      "missing",
+    description: "missing",
     type: "move",
   },
   {
     name: "paddle",
     image: "",
-    description:
-      "missing.",
+    description: "missing.",
     type: "move",
   },
   {
@@ -162,22 +160,19 @@ export const MOVES = [
   {
     name: "toehook",
     image: "",
-    description:
-      "Wrapping the top of the foot up or around a rock feature.",
+    description: "Wrapping the top of the foot up or around a rock feature.",
     type: "move",
   },
   {
     name: "run in",
     image: "",
-    description:
-      "missing.",
+    description: "missing.",
     type: "move",
   },
   {
     name: "runner",
     image: "",
-    description:
-      "missing",
+    description: "missing",
     type: "move",
   },
 ];
@@ -185,143 +180,142 @@ export const MOVES = [
 export const TERRAINS = [
   {
     name: "slab -10",
-    image: "",
+    image: "/pictures/terrain/SlabTen.jpg",
     description: "Slightly inclined backward.",
     type: "terrain",
   },
   {
     name: "slab -5",
-    image: "",
+    image: "/pictures/terrain/SlabFive.jpg",
     description: "Almost upright, leaning backward.",
     type: "terrain",
   },
   {
     name: "vertical 0",
-    image: "",
+    image: "/pictures/terrain/Vertical.jpg",
     description: "Completely upright.",
     type: "terrain",
   },
   {
     name: "overhang 10",
-    image: "",
+    image: "/pictures/terrain/Ten.jpg",
     description: "Mildly leaning forward.",
     type: "terrain",
   },
   {
     name: "overhang 20",
-    image: "",
+    image: "/pictures/terrain/Twenty.jpg",
     description: "Steeper forward incline.",
     type: "terrain",
   },
   {
     name: "overhang 30",
-    image: "",
+    image: "/pictures/terrain/Thirty.jpg",
     description: "Significantly leaning forward.",
     type: "terrain",
   },
   {
     name: "overhang 40",
-    image: "",
+    image: "/pictures/terrain/Fourty.jpg",
     description: "Challenging forward angle.",
     type: "terrain",
   },
   {
     name: "roof 50",
-    image: "",
+    image: "/pictures/terrain/Fivty.jpg",
     description: "Closer to fully horizontal then vertical.",
     type: "terrain",
   },
   {
     name: "roof 60",
-    image: "",
+    image: "/pictures/terrain/Sixty.jpg",
     description: "Nearly horizontal surface.",
     type: "terrain",
   },
   {
     name: "roof 70",
-    image: "",
+    image: "/pictures/terrain/Seventy.jpg",
     description: "Very close to horizontal.",
     type: "terrain",
   },
   {
     name: "roof 80",
-    image: "",
+    image: "/pictures/terrain/Eighty.jpg",
     description: "Almost a flat roof.",
     type: "terrain",
   },
   {
     name: "roof 90",
-    image: "",
+    image: "/pictures/terrain/Ninety.jpg",
     description: "A flat roof.",
     type: "terrain",
   },
-
 ];
 
 export const AMOUNTOFMOVES = [
   {
     name: "two",
-    image: "",
+    image: "/pictures/amount/Two.jpg",
     description: "The smallest prime number.",
     type: "amount",
   },
   {
     name: "three",
-    image: "",
+    image: "/pictures/amount/Three.jpg",
     description: "The number of sides in a triangle.",
     type: "amount",
   },
   {
     name: "four",
-    image: "",
+    image: "/pictures/amount/Four.jpg",
     description: "The number of seasons in a year.",
     type: "amount",
   },
   {
     name: "five",
-    image: "",
+    image: "/pictures/amount/Five.jpg",
     description: "The number of fingers on one hand.",
     type: "amount",
   },
   {
     name: "six",
-    image: "",
+    image: "/pictures/amount/Six.jpg",
     description: "Insects typically have six legs.",
     type: "amount",
   },
   {
     name: "seven",
-    image: "",
+    image: "/pictures/amount/Seven.jpg",
     description: "The number of continents on Earth.",
     type: "amount",
   },
   {
     name: "eight",
-    image: "",
+    image: "/pictures/amount/Eight.jpg",
     description: "Spiders have eight legs.",
     type: "amount",
   },
   {
     name: "nine",
-    image: "",
+    image: "/pictures/amount/Nine.jpg",
     description: "The highest single-digit number.",
     type: "amount",
   },
   {
     name: "ten",
-    image: "",
+    image: "/pictures/amount/Ten.jpg",
     description: "The basis of our decimal system.",
     type: "amount",
   },
   {
     name: "eleven",
-    image: "",
+    image: "/pictures/amount/Eleven.jpg",
     description: "A number often associated with magic.",
     type: "amount",
   },
   {
     name: "twelve",
-    image: "",
+    image: "/pictures/amount/Twelve.jpg",
     description: "The number of months in a year.",
     type: "amount",
   },
@@ -330,123 +324,108 @@ export const AMOUNTOFMOVES = [
 export const STYLES = [
   {
     name: "tricky",
-    image: "",
+    image: "/pictures/style/Tricky.jpg",
     description: "Difficult to deal with or handle.",
     type: "style",
   },
   {
     name: "power",
-    image: "",
+    image:"/pictures/style/Power.jpg",
     description: "The ability to do something or act in a particular way.",
     type: "style",
   },
   {
     name: "delicate",
-    image: "",
+    image: "/pictures/style/Delicate.jpg",
     description: "Easily broken or requiring careful handling.",
     type: "style",
   },
   {
     name: "chaos",
-    image: "",
+    image: "/pictures/style/Chaos.jpg",
     description: "Complete disorder and confusion.",
     type: "style",
   },
   {
     name: "straight forward",
-    image: "",
+    image: "/pictures/style/Straight.jpg",
     description: "Simple and easy to understand.",
     type: "style",
   },
   {
-    name: "ballern",
-    image: "",
-    description: "German slang for 'to shoot' or 'to go all out.'",
+    name: "all-out",
+    image: "/pictures/style/All.jpg",
+    description: "Using the maximum effort or resources available; complete or total.",
     type: "style",
   },
   {
     name: "low percentage",
-    image: "",
+    image: "/pictures/style/Low.jpg",
     description: "A small or unlikely chance of success.",
     type: "style",
   },
 ];
 
-
 export const TOPICS = [
   {
     name: "handcuffed",
-    image: "",
+    image: "/pictures/topics/Handcuffed.jpg",
     description:
       "A climbing scenario where the climber’s hands are restricted, often requiring creative movement and body positioning.",
     type: "topic",
   },
   {
     name: "hide and seek",
-    image: "",
+    image: "/pictures/topics/Hide.jpg",
     description:
       "A style of climbing where the climber must find and use obscure or hidden holds to progress.",
     type: "topic",
   },
   {
     name: "surprise",
-    image: "",
+    image: "/pictures/topics/Surprise.jpg",
     description:
       "A climbing style where unexpected moves or sequences challenge the climber's adaptability and problem-solving skills.",
     type: "topic",
   },
   {
-    name: "fast slow slow",
-    image: "",
-    description:
-      "A technique involving a mix of rapid, controlled movements followed by slow, deliberate actions to maintain balance.",
-    type: "topic",
-  },
-  {
-    name: "slow fast slow",
-    image: "",
+    name: "s/f/s",
+    image: "/pictures/topics/SlowFastSlow.jpg",
     description:
       "A climbing pattern where the climber starts with a slow, cautious approach, accelerates for a quick move, and then slows down again for precision.",
     type: "topic",
   },
   {
-    name: "slow slow fast",
-    image: "",
-    description:
-      "A style that emphasizes slow, careful movements with a burst of speed for a challenging or dynamic move.",
-    type: "topic",
-  },
-  {
-    name: "fast slow fast",
-    image: "",
+    name: "f/s/f",
+    image: "/pictures/topics/FastSlowFast.jpg",
     description:
       "A technique where the climber uses quick movements followed by a slow and precise action, ending with another fast motion to complete the move.",
     type: "topic",
   },
   {
     name: "slow",
-    image: "",
+    image: "/pictures/topics/Slow.jpg",
     description:
       "A climbing style that emphasizes slow, deliberate movements to maintain control and balance, often used in delicate or technical situations.",
     type: "topic",
   },
   {
     name: "fast",
-    image: "",
+    image: "/pictures/topics/Fast.jpg",
     description:
       "A dynamic style of climbing that relies on speed, aggression, and momentum to complete movements quickly.",
     type: "topic",
   },
   {
-    name: "fast slow",
-    image: "",
+    name: "fast/slow",
+    image: "/pictures/topics/FastSlow.jpg",
     description:
       "A style where the climber alternates between fast, explosive moves and slower, more controlled actions to adapt to the terrain.",
     type: "topic",
   },
   {
-    name: "slow fast",
-    image: "",
+    name: "slow/fast",
+    image: "/pictures/topics/SlowFast.jpg",
     description:
       "A climbing method where the climber takes slow, careful actions before making a fast, decisive move to progress.",
     type: "topic",
@@ -498,15 +477,13 @@ export const STARTS = [
   {
     name: "one hold",
     image: "",
-    description:
-      "A climb that starts with both hands on the first hold",
+    description: "A climb that starts with both hands on the first hold",
     type: "start",
   },
   {
     name: "two holds",
     image: "",
-    description:
-      "A climb that starts with two seperate starting holds",
+    description: "A climb that starts with two seperate starting holds",
     type: "start",
   },
   {
@@ -519,22 +496,19 @@ export const STARTS = [
   {
     name: "jumpstart",
     image: "",
-    description:
-      "A start where the climber jumps to reach the first hold.",
+    description: "A start where the climber jumps to reach the first hold.",
     type: "start",
   },
   {
     name: "standstart",
     image: "",
-    description:
-      "A climb that starts in a standing position.",
+    description: "A climb that starts in a standing position.",
     type: "start",
   },
   {
     name: "sitstart",
     image: "/",
-    description:
-      "A start where the climber begins seated on the ground.",
+    description: "A start where the climber begins seated on the ground.",
     type: "start",
   },
 ];
@@ -544,157 +518,162 @@ export const GRADES = [
     name: "3",
     vScale: "VB",
     description: "Beginner/Introductory",
-    image: "",
+    image: "/pictures/grades/Three.jpg",
     type: "grade",
   },
   {
     name: "3+",
     vScale: "VB",
     description: "Beginner/Introductory",
-    image: "",
+    image: "/pictures/grades/Threeplus.jpg",
     type: "grade",
   },
-  { name: "4", vScale: "VB", description: "Easy", image: "", type: "grade" },
-  { name: "4+", vScale: "V0", description: "Easy", image: "", type: "grade" },
+  {
+    name: "4",
+    vScale: "VB",
+    description: "Easy",
+    image: "/pictures/grades/Four.jpg",
+    type: "grade",
+  },
+
+  {
+    name: "4+",
+    vScale: "V0",
+    description: "Easy",
+    image: "/pictures/grades/FourPlus.jpg",
+    type: "grade",
+  },
   {
     name: "5",
     vScale: "V1",
     description: "Moderate",
-    image: "",
+    image: "/pictures/grades/Five.jpg",
     type: "grade",
   },
   {
     name: "5+",
     vScale: "V2",
     description: "Moderate",
-    image: "",
+    image: "/pictures/grades/FivePlus.jpg",
     type: "grade",
   },
   {
     name: "6A",
     vScale: "V3",
     description: "Challenging",
-    image: "",
+    image: "/pictures/grades/SixA.jpg",
     type: "grade",
   },
   {
     name: "6A+",
     vScale: "V3-V4",
     description: "Challenging",
-    image: "",
+    image: "/pictures/grades/SixAPlus.jpg",
     type: "grade",
   },
   {
     name: "6B",
     vScale: "V4",
     description: "Difficult",
-    image: "",
+    image: "/pictures/grades/SixB.jpg",
     type: "grade",
   },
   {
     name: "6B+",
     vScale: "V4-V5",
     description: "Difficult",
-    image: "",
+    image: "/pictures/grades/SixBPlus.jpg",
     type: "grade",
   },
   {
     name: "6C",
     vScale: "V5",
     description: "Very Difficult",
-    image: "",
+    image: "/pictures/grades/SixC.jpg",
     type: "grade",
   },
   {
     name: "6C+",
     vScale: "V5-V6",
     description: "Very Difficult",
-    image: "",
+    image: "/pictures/grades/SixCPlus.jpg",
     type: "grade",
   },
   {
     name: "7A",
     vScale: "V6",
     description: "Advanced",
-    image: "",
+    image: "/pictures/grades/SevenA.jpg",
     type: "grade",
   },
   {
     name: "7A+",
     vScale: "V7",
     description: "Advanced",
-    image: "",
+    image: "/pictures/grades/SevenAPlus.jpg",
     type: "grade",
   },
   {
     name: "7B",
     vScale: "V8",
     description: "Very Advanced",
-    image: "",
+    image: "/pictures/grades/SevenB.jpg",
     type: "grade",
   },
   {
     name: "7B+",
     vScale: "V8-V9",
     description: "Very Advanced",
-    image: "",
+    image: "/pictures/grades/SevenBPlus.jpg",
     type: "grade",
   },
-  { name: "7C", vScale: "V9", description: "Elite", image: "", type: "grade" },
+  {
+    name: "7C",
+    vScale: "V9",
+    description: "Elite",
+    image: "/pictures/grades/SevenC.jpg",
+    type: "grade",
+  },
   {
     name: "7C+",
     vScale: "V10",
     description: "Elite",
-    image: "",
+    image: "/pictures/grades/SevenCPlus.jpg",
     type: "grade",
   },
   {
     name: "8A",
     vScale: "V11",
     description: "Expert level",
-    image: "",
+    image: "/pictures/grades/EightA.jpg",
     type: "grade",
   },
   {
     name: "8A+",
     vScale: "V12",
     description: "Expert level",
-    image: "",
+    image: "/pictures/grades/EightAPlus.jpg",
     type: "grade",
   },
   {
     name: "8B",
     vScale: "V13",
     description: "Professional/World-class",
-    image: "",
+    image: "/pictures/grades/EightB.jpg",
     type: "grade",
   },
   {
     name: "8B+",
     vScale: "V14",
     description: "Professional/World-class",
-    image: "",
+    image: "/pictures/grades/EightBPlus.jpg",
     type: "grade",
   },
   {
     name: "8C",
     vScale: "V15",
     description: "Exceptional ability",
-    image: "",
-    type: "grade",
-  },
-  {
-    name: "8C+",
-    vScale: "V16",
-    description: "Exceptional ability",
-    image: "",
-    type: "grade",
-  },
-  {
-    name: "9A",
-    vScale: "V17",
-    description: "Cutting-edge, hardest in the world",
-    image: "",
+    image: "/pictures/grades/EightC.jpg",
     type: "grade",
   },
 ];
@@ -702,61 +681,61 @@ export const GRADES = [
 export const LEVELS = [
   {
     name: "1",
-    image: "",
+    image: "/pictures/levels/One.jpg",
     description: "Initial contact - introductory challenges ahead",
     type: "level",
   },
   {
     name: "2",
-    image: "",
+    image: "/pictures/levels/Two.jpg",
     description: "Getting familiar - start exploring new skills",
     type: "level",
   },
   {
     name: "3",
-    image: "",
+    image: "/pictures/levels/Three.jpg",
     description: "Warming up - simple but essential tasks",
     type: "level",
   },
   {
     name: "4",
-    image: "",
+    image: "/pictures/levels/Four.jpg",
     description: "Picking up pace - challenges now require focus",
     type: "level",
   },
   {
     name: "5",
-    image: "",
+    image: "/pictures/levels/Five.jpg",
     description: "Halfway there - tasks are more complex",
     type: "level",
   },
   {
     name: "6",
-    image: "",
+    image: "/pictures/levels/Six.jpg",
     description: "Sharper skills needed - stay alert for new twists",
     type: "level",
   },
   {
     name: "7",
-    image: "",
+    image: "/pictures/levels/Seven.jpg",
     description: "Intensifying - tests demand strategy and precision",
     type: "level",
   },
   {
     name: "8",
-    image: "",
+    image: "/pictures/levels/Eight.jpg",
     description: "Advanced challenges - mastery of earlier skills required",
     type: "level",
   },
   {
     name: "9",
-    image: "",
+    image: "/pictures/levels/Nine.jpg",
     description: "Penultimate test - obstacles are now very tough",
     type: "level",
   },
   {
     name: "10",
-    image: "",
+    image: "/pictures/levels/Ten.jpg",
     description: "Final level - only the strongest will succeed",
     type: "level",
   },
